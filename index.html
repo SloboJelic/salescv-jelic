@@ -235,7 +235,6 @@
   .story-head .chev{font-size:20.5px;color:var(--accent);transition:transform .25s ease;flex-shrink:0;}
   .story-item.open .chev{transform:rotate(45deg);}
   .story-body{max-height:0;overflow:hidden;transition:max-height .4s ease;}
-  .story-item.open .story-body{max-height:2000px;}
   .story-body-inner{padding:0 0 30px;color:var(--ink-soft);font-size:18px;}
   .story-body-inner p{margin-bottom:14px;}
   .story-body-inner .story-sub{color:var(--ink);font-weight:700;font-size:19px;margin:22px 0 10px;}
@@ -1109,8 +1108,20 @@
 
   // accordions
   function toggleStory(el){
-    el.parentElement.classList.toggle('open');
+    var item = el.parentElement;
+    var body = item.querySelector('.story-body');
+    var isOpen = item.classList.toggle('open');
+    if (isOpen) {
+      body.style.maxHeight = body.scrollHeight + 'px';
+    } else {
+      body.style.maxHeight = '';
+    }
   }
+  window.addEventListener('resize', function(){
+    document.querySelectorAll('.story-item.open .story-body').forEach(function(body){
+      body.style.maxHeight = body.scrollHeight + 'px';
+    });
+  });
   function toggleProj(el){
     const list = el.nextElementSibling;
     list.classList.toggle('open');
