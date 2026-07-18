@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="de">
+<script>
+  (function(){
+    try{
+      var saved = localStorage.getItem('theme');
+      if(saved === 'light' || saved === 'dark'){
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    }catch(e){}
+  })();
+</script>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,6 +41,57 @@
 <meta name="twitter:title" content="Slobodan Jelic – Sales Leadership">
 <meta name="twitter:description" content="15+ Jahre Vertriebserfahrung im Bildungsmarkt. Sales Leadership, Teamführung und Prozessoptimierung.">
 <meta name="twitter:image" content="https://www.salescv-jelic.de/og-image.jpg">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "dateModified": "2026-07",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Slobodan Jelic",
+    "url": "https://www.salescv-jelic.de/",
+    "image": "https://www.salescv-jelic.de/og-image.jpg",
+    "jobTitle": "Leitung Inbound Vertrieb",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "GFN GmbH"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Detmold",
+      "addressRegion": "NRW",
+      "addressCountry": "DE"
+    },
+    "email": "mailto:slobojelic@icloud.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/slobodan-jelic-8a2911269",
+      "https://www.xing.com/profile/Slobodan_Jelic/web_profiles?nwt_nav=profile_icon"
+    ],
+    "knowsAbout": [
+      "Vertriebsleitung",
+      "Sales Leadership",
+      "Teamführung",
+      "AZAV",
+      "FbW",
+      "AVGS",
+      "QCG",
+      "Lead Management",
+      "Vertriebsdigitalisierung",
+      "Qualitätsmanagement",
+      "KI im Vertrieb"
+    ],
+    "knowsLanguage": ["de", "sr"],
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "Ausbildung zum Informatikkaufmann"
+    },
+    "description": "Sales Leadership im Bildungsmarkt. 15+ Jahre B2B/B2C/B2G-Vertrieb, Leitung Inbound Vertrieb bei GFN GmbH. Erfahrung in FbW, AVGS, QCG und AZAV-Qualitätsmanagement."
+  }
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet">
@@ -55,6 +116,26 @@
     --radius: 14px;
     --maxw: 1120px;
   }
+  html[data-theme="light"]{
+    --bg:#f7f5f1;
+    --bg-alt:#ffffff;
+    --surface:#ffffff;
+    --surface-2:#f0ece4;
+    --elevated:#ffffff;
+    --ink:#181b24;
+    --ink-soft:#565c72;
+    --slate:#6b7086;
+    --line:rgba(20,23,32,0.08);
+    --line-strong:rgba(20,23,32,0.14);
+    --navy:#eef0f5;
+    --navy-deep:#141720;
+    --accent:#c94f2a;
+    --accent-2:#e05a30;
+    --accent-soft:rgba(201,79,42,0.10);
+    --shadow: 0 25px 60px -20px rgba(20,23,32,0.18);
+  }
+  html, body{transition:background .35s ease, color .35s ease;}
+  * , *::before, *::after{transition:background-color .3s ease, border-color .3s ease, box-shadow .3s ease;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   a:focus-visible, button:focus-visible, .story-head:focus-visible, .proj-toggle:focus-visible{
@@ -143,6 +224,20 @@
   .burger.open span:nth-child(1){transform:translateY(5px) rotate(45deg);}
   .burger.open span:nth-child(2){opacity:0;}
   .burger.open span:nth-child(3){transform:translateY(-5px) rotate(-45deg);}
+
+  /* ---------- THEME TOGGLE ---------- */
+  .theme-toggle{
+    width:38px;height:38px;border-radius:9px;
+    border:1px solid var(--line-strong);background:var(--surface);
+    cursor:pointer;display:flex;align-items:center;justify-content:center;
+    color:var(--ink-soft);flex-shrink:0;
+  }
+  .theme-toggle:hover{border-color:var(--accent);color:var(--ink);}
+  .theme-toggle svg{width:19px;height:19px;}
+  .theme-toggle .icon-sun{display:none;}
+  .theme-toggle .icon-moon{display:block;}
+  html[data-theme="light"] .theme-toggle .icon-sun{display:block;}
+  html[data-theme="light"] .theme-toggle .icon-moon{display:none;}
   .mobile-panel{
     display:none;position:fixed;top:76px;left:0;right:0;background:var(--surface);
     border-bottom:1px solid var(--line);padding:20px 28px 28px;z-index:99;
@@ -301,6 +396,7 @@
   .check-list{list-style:none;}
   .check-list li{color:var(--ink-soft);font-size:17px;line-height:1.6;margin-bottom:8px;padding-left:26px;position:relative;}
   .check-list li::before{content:"✓";position:absolute;left:0;top:0;color:var(--accent);font-weight:700;}
+  .check-list li b{color:var(--ink);font-weight:700;}
   .highlight-box{
     margin-top:18px;background:var(--accent-soft);border-radius:var(--radius);
     padding:18px 22px;font-size:16.5px;color:var(--ink);
@@ -503,6 +599,10 @@
     </div>
     <div class="nav-actions">
       <a href="#kontakt" class="btn btn-primary" style="display:none" id="ctaTop">Kontakt</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Farbschema wechseln">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+      </button>
       <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
     </div>
   </nav>
@@ -758,7 +858,7 @@
                 <div class="proj-section"><div class="lbl">Ausgangssituation</div><p>Im Inbound-Betrieb entsteht ein klassisches Problem: Wenn das Beratungsteam vollständig ausgelastet ist, landen eingehende Anrufe in der Warteschleife – oder Interessenten legen einfach auf. Jeder abgebrochene Anruf ist ein potenziell verlorener Lead. Gerade in Stoßzeiten, wenn die Nachfrage am höchsten ist, war die Erreichbarkeit am stärksten eingeschränkt.</p></div>
                 <div class="proj-section"><div class="lbl">Umsetzung</div>
                   <p>Ich verantworte das Projekt von Grund auf selbst. Am Anfang stand eine strukturierte Marktrecherche: Welche Anbieter kommen überhaupt infrage? Ich habe Lösungen gezielt anhand fachlicher, datenschutzrechtlicher und wirtschaftlicher Kriterien bewertet – DSGVO-Konformität, Serverstandort, ISO-Zertifizierung, Kostenstruktur. Nach Gesprächen mit mehreren Anbietern habe ich eine fundierte Entscheidung getroffen.</p>
-                  <p>Aktuell entwickle ich die gesamte Logik des Agents: Gesprächsleitfaden, Ablaufstruktur und Übergabeprozesse ins Team. Ziel ist, dass der Agent automatisch einspringt, wenn alle Berater:innen im Gespräch sind, den Anruf annimmt, das Anliegen versteht und strukturiert zusammenfasst. Im Anschluss soll das Team automatisch eine E-Mail erhalten – DSGVO-konform.</p>
+                  <p>Aktuell entwickle ich die gesamte Logik des Agents: Gesprächsleitfaden, Ablaufstruktur und Übergabeprozesse ins Team. Ziel ist, dass der Agent automatisch einspringt, wenn alle Beratenden im Gespräch sind, den Anruf annimmt, das Anliegen versteht und strukturiert zusammenfasst. Im Anschluss soll das Team automatisch eine E-Mail erhalten – DSGVO-konform.</p>
                 </div>
                 <div class="proj-section"><div class="lbl">Erwartetes Ergebnis</div><ul class="check-list">
                   <li>Keine abgebrochenen Anrufe mehr bei Auslastungsspitzen</li>
@@ -778,9 +878,9 @@
                   <p>Im nächsten Schritt habe ich die Erweiterung um eine automatisierte Alarmfunktion initiiert und fachlich verantwortet: Bei definierten Auslastungsschwellen erhalten relevante Stakeholder automatisch eine Benachrichtigung über Microsoft Teams – bevor ein Engpass entsteht, nicht erst wenn er schon spürbar ist.</p>
                 </div>
                 <div class="proj-section"><div class="lbl">Ergebnis</div><ul class="check-list">
-                  <li>Über 100 Stunden manueller Aufwand pro Jahr eingespart</li>
-                  <li>Manuelle Kapazitätsprüfungen komplett weggefallen</li>
-                  <li>Kritische Auslastungen werden jetzt frühzeitig erkannt statt erst im Nachhinein</li>
+                  <li><b>Über 100 Stunden</b> manueller Aufwand pro Jahr eingespart</li>
+                  <li>Manuelle Kapazitätsprüfungen <b>komplett weggefallen</b></li>
+                  <li>Kritische Auslastungen werden jetzt <b>frühzeitig erkannt</b> statt erst im Nachhinein</li>
                   <li>Stabilere Terminverfügbarkeit durch proaktive statt reaktive Steuerung</li>
                 </ul></div>
               </div>
@@ -794,8 +894,8 @@
                   <p>Entstanden ist eine 5-stufige Follow-up-Sequenz, aufgeteilt nach den Angebotsbereichen Weiterbildung, Umschulung, Coaching und QCG. Jede Stufe hat ein klares Ziel, einen konkreten Call-to-Action und einen festen Versandzeitpunkt – keine Stufe ist einfach nur „eine weitere Erinnerung". Die größte Arbeit steckte eigentlich nicht im Schreiben der Texte, sondern in der Frage, wann welcher Touchpoint wirklich Sinn ergibt, ohne dass sich Interessenten bedrängt fühlen.</p>
                 </div>
                 <div class="proj-section"><div class="lbl">Ergebnis</div><ul class="check-list">
-                  <li>20 einheitliche E-Mail-Vorlagen entwickelt und implementiert</li>
-                  <li>Kontaktpunkte je Lead von 3 auf bis zu 10 erhöht</li>
+                  <li><b>20 einheitliche E-Mail-Vorlagen</b> entwickelt und implementiert</li>
+                  <li>Kontaktpunkte je Lead von <b>3 auf bis zu 10</b> erhöht</li>
                   <li>Einheitliches Wording in der Erstberatung etabliert</li>
                   <li>Klare, strukturierte Interessentenführung mit definierten nächsten Schritten in jeder Phase</li>
                 </ul></div>
@@ -849,8 +949,8 @@
                 <div class="proj-section"><div class="lbl">Ausgangssituation</div><p>2017 haben der Inhaber der SAN-Akademie und ich die Idee entwickelt, IT-Fachkräfte nicht nur zu vermitteln, sondern auch selbst auszubilden – daraus entstand die SAN-Akademie. Die erste große Hürde danach: die AZAV-Trägerzulassung. Es gab kein bestehendes System, keine Vorlage, keine externe Beratung – nur die AZAV-Verordnung selbst, fachliche Weisungen der Bundesagentur für Arbeit und die Empfehlungen des Beirats.</p></div>
                 <div class="proj-section"><div class="lbl">Umsetzung</div><p>Ich habe mich komplett eigenständig in die AZAV-Anforderungen eingearbeitet und daraus Schritt für Schritt ein vollständiges Qualitätsmanagementsystem gebaut – angefangen bei einer leeren Dokumentenvorlage. Entstanden sind Prozessbeschreibungen, Arbeitsanweisungen, Checklisten und alle notwendigen Nachweise und Dokumentationsstrukturen. Das Besondere daran: Nichts davon basiert auf einem fertigen Template. Jeder Baustein ist aus der eigenen Interpretation der regulatorischen Anforderungen heraus entstanden, was zwar aufwendiger war, aber auch bedeutet hat, dass ich am Ende genau wusste, warum jeder einzelne Prozess so aufgebaut ist, wie er ist.</p></div>
                 <div class="proj-section"><div class="lbl">Ergebnis</div><ul class="check-list">
-                  <li>Erfolgreiche Trägerzertifizierung nach AZAV</li>
-                  <li>Jährliche externe Audits ohne Haupt- oder Nebenabweichungen bestanden</li>
+                  <li><b>Erfolgreiche Trägerzertifizierung</b> nach AZAV</li>
+                  <li>Jährliche externe Audits <b>ohne Haupt- oder Nebenabweichungen</b> bestanden</li>
                 </ul></div>
               </div>
             </div>
@@ -882,7 +982,7 @@
                 <div class="proj-section"><div class="lbl">Ausgangssituation</div><p>Bei uns lief eigentlich alles über Dokumente, die auf dem Server in Ordnern abgelegt waren. Es gab keine zentrale Übersicht über Kandidaten, Freelancer, Kunden oder laufende Aufträge – wer verfügbar war, welchen Vertragsstatus jemand hatte oder was zuletzt besprochen wurde, musste man sich mühsam aus einzelnen Dateien zusammensuchen. Das führte regelmäßig zu Doppelarbeit und Informationsverlust, besonders wenn Zuständigkeiten gewechselt haben.</p></div>
                 <div class="proj-section"><div class="lbl">Umsetzung</div><p>Gemeinsam mit dem BIB College Paderborn (Fachbereich Informatik) habe ich die fachliche Konzeption für eine zentrale Datenbank entwickelt und die Umsetzung begleitet. Auf Basis dessen, was ich aus dem operativen Alltag wusste, entstand eine Struktur, die Freelancer, Mitarbeiter und Kunden zentral erfasst und miteinander verknüpft – inklusive einer integrierten Dokumentenverwaltung, damit Lebensläufe und Verträge direkt am jeweiligen Datensatz hängen, statt in irgendeinem Ordner zu verschwinden. Zusätzlich haben wir Auftragsstatus, Verfügbarkeiten und Historien mit abgebildet, damit der komplette Prozess an einer Stelle nachvollziehbar ist.</p></div>
                 <div class="proj-section"><div class="lbl">Ergebnis</div><ul class="check-list">
-                  <li>Eine zentrale, strukturierte Datenbasis statt verteilter Dokumente auf dem Server</li>
+                  <li><b>Eine zentrale, strukturierte Datenbasis</b> statt verteilter Dokumente auf dem Server</li>
                   <li>Deutlich schnellerer Zugriff auf Kandidaten-, Freelancer- und Kundendaten</li>
                   <li>Dokumentenverwaltung direkt integriert, ohne manuelle Ordnerpflege</li>
                   <li>Mehr Transparenz über Auftragsstatus und Verfügbarkeiten</li>
@@ -1236,6 +1336,17 @@ function empPrev(){ei=(ei-1+emps.length)%emps.length;empRender();resetEmpTimer()
 function resetEmpTimer(){clearInterval(etimer);etimer=setInterval(empNext,20000);}
 document.addEventListener('DOMContentLoaded',function(){empRender();etimer=setInterval(empNext,20000);});
 
+// ── THEME TOGGLE ──
+(function(){
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    var current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    var next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    try{ localStorage.setItem('theme', next); }catch(e){}
+  });
+})();
 
 </script>
 
