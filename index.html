@@ -96,6 +96,7 @@
   .reveal,.hero-enter{opacity:1 !important;transform:none !important;animation:none !important;}
   .story-body{max-height:none !important;}
   .proj-list{max-height:none !important;margin-top:20px;}
+  .proj-teaser{display:none !important;}
 </style></noscript>
 <style>
   @font-face{font-family:'Public Sans';font-style:normal;font-weight:400;font-display:swap;src:url('/public-sans-latin-400-normal.woff2') format('woff2');}
@@ -113,13 +114,14 @@
     --elevated:#2e3347;
     --ink:#f0ede8;
     --ink-soft:#8f95a8;
-    --slate:#545a6e;
+    --slate:#8189a0;
     --line:rgba(255,255,255,0.06);
     --line-strong:rgba(255,255,255,0.11);
     --navy:var(--elevated);
     --navy-deep:#0e1017;
     --accent:#c94f2a;
     --accent-2:#e05a30;
+    --accent-text:#e5673f;
     --accent-soft:rgba(201,79,42,0.16);
     --shadow: 0 25px 60px -20px rgba(0,0,0,0.55);
     --radius: 14px;
@@ -133,13 +135,14 @@
     --elevated:#ffffff;
     --ink:#181b24;
     --ink-soft:#565c72;
-    --slate:#6b7086;
+    --slate:#626880;
     --line:rgba(20,23,32,0.08);
     --line-strong:rgba(20,23,32,0.14);
     --navy:#eef0f5;
     --navy-deep:#141720;
     --accent:#c94f2a;
     --accent-2:#e05a30;
+    --accent-text:#b23f1c;
     --accent-soft:rgba(201,79,42,0.10);
     --shadow: 0 25px 60px -20px rgba(20,23,32,0.18);
   }
@@ -174,7 +177,7 @@
     font-weight:700;
     letter-spacing:.14em;
     text-transform:uppercase;
-    color:var(--accent);
+    color:var(--accent-text);
     display:flex;align-items:center;gap:8px;
     margin-bottom:14px;
   }
@@ -197,7 +200,7 @@
   .brand{display:flex;align-items:center;gap:10px;font-family:'Public Sans',sans-serif;font-weight:700;font-size:20.5px;}
   .brand .mark{
     width:34px;height:34px;border-radius:9px;
-    background:var(--accent);color:var(--navy-deep);
+    background:var(--accent);color:#fff;
     display:flex;align-items:center;justify-content:center;
     font-family:'Public Sans',sans-serif;font-size:15px;letter-spacing:.02em;
   }
@@ -221,7 +224,7 @@
     transition:transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
   }
   .btn:hover{transform:translateY(-1px);}
-  .btn-primary{background:var(--accent);color:var(--navy-deep);}
+  .btn-primary{background:var(--accent);color:#fff;}
   .btn-primary:hover{background:var(--accent-2);}
   .btn-ghost{border-color:var(--line-strong);color:var(--ink);background:transparent;}
   .btn-ghost:hover{border-color:var(--accent);}
@@ -303,8 +306,10 @@
     display:flex;justify-content:space-between;align-items:center;
     font-family:'Public Sans',sans-serif;font-size:14px;
   }
-  .tag b{color:var(--accent);font-size:16px;}
+  .tag b{color:var(--accent-text);font-size:16px;}
 
+  .haltung-title{font-size:clamp(28px,3vw,36px);line-height:1.15;margin:8px 0 22px;}
+  .about-block{margin-top:80px;}
   .philosophy-block{max-width:760px;}
   .philosophy-block p{color:var(--ink-soft);font-size:20.5px;line-height:1.6;margin-bottom:18px;}
   .philosophy-block p.lead{color:var(--ink);font-weight:600;}
@@ -317,7 +322,6 @@
     border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
   }
   .pillar-card{background:var(--surface);padding:28px 24px;}
-  .pillar-num{font-family:'Public Sans',sans-serif;font-weight:700;font-size:15px;color:var(--accent);letter-spacing:.06em;margin-bottom:10px;}
   .pillar-card h3{font-size:20.5px;font-weight:700;}
   .pillars-outro{
     margin-top:26px;max-width:760px;color:var(--ink-soft);font-size:20.5px;line-height:1.6;
@@ -334,7 +338,7 @@
     cursor:pointer;gap:20px;
   }
   .story-head-text{display:flex;flex-direction:column;gap:8px;flex:1;}
-  .story-head .ov{font-family:'Public Sans',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);}
+  .story-head .ov{font-family:'Public Sans',sans-serif;font-size:15.5px;font-weight:600;color:var(--accent-text);}
   .story-head h3{font-size:23px;}
   .story-head .chev{font-size:20.5px;color:var(--accent);transition:transform .25s ease;flex-shrink:0;}
   .story-item.open .chev{transform:rotate(45deg);}
@@ -375,7 +379,7 @@
     .sticky-cta .cta-label{display:none;}
   }
   .job-meta{font-family:'Public Sans',sans-serif;font-size:15px;color:var(--slate);}
-  .job-meta .dates{color:var(--accent);display:block;margin-bottom:8px;}
+  .job-meta .dates{color:var(--accent-text);display:block;margin-bottom:8px;}
   .job-title h3{font-size:25.5px;margin-bottom:4px;}
   .job-title .job-note{font-size:15px;color:var(--slate);font-style:italic;margin:-10px 0 16px;}
   .job-title .org{color:var(--slate);font-size:16.5px;margin-bottom:18px;}
@@ -383,8 +387,15 @@
   .job-title ul li{margin-bottom:6px;line-height:1.5;}
   .proj-toggle{
     margin-top:20px;font-family:'Public Sans',sans-serif;font-size:14.5px;
-    color:var(--accent);cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+    color:var(--accent-text);cursor:pointer;display:inline-flex;align-items:center;gap:6px;
   }
+  .job-title .proj-teaser{list-style:none;margin:24px 0 0;padding:0;border-top:1px solid var(--line);}
+  .job-title .proj-teaser li{margin:0;border-bottom:1px solid var(--line);}
+  .proj-teaser button{display:block;width:100%;text-align:left;background:none;border:0;padding:12px 0;font-family:inherit;font-size:16.5px;font-weight:600;line-height:1.4;color:var(--ink);cursor:pointer;}
+  .proj-teaser button:hover{color:var(--accent-text);}
+  .job-title.projects-open .proj-teaser{display:none;}
+  .job-title .proj-toggle{margin-top:16px;}
+  .proj-card{scroll-margin-top:100px;}
   .proj-list{max-height:0;overflow:hidden;transition:max-height .4s ease;}
   .proj-list.open{max-height:10000px;margin-top:20px;}
   .proj-card{
@@ -397,10 +408,10 @@
   .proj-meta{display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
   .proj-card .pd{font-family:'Public Sans',sans-serif;font-size:14px;color:var(--slate);}
   .proj-org{font-family:'Public Sans',sans-serif;font-size:13px;color:var(--ink-soft);background:var(--surface-2);border:1px solid var(--line-strong);border-radius:999px;padding:3px 10px;}
-  .proj-status{font-family:'Public Sans',sans-serif;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-soft);border:1px solid rgba(201,79,42,0.35);border-radius:999px;padding:3px 10px;}
+  .proj-status{font-family:'Public Sans',sans-serif;font-size:13px;font-weight:600;color:var(--accent-text);background:var(--accent-soft);border:1px solid rgba(201,79,42,0.35);border-radius:999px;padding:3px 10px;}
   .proj-section{margin-bottom:20px;}
   .proj-section:last-child{margin-bottom:0;}
-  .proj-section .lbl{font-family:'Public Sans',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.09em;color:var(--accent);margin-bottom:8px;}
+  .proj-section .lbl{font-family:'Public Sans',sans-serif;font-weight:700;font-size:15px;color:var(--accent-text);margin-bottom:8px;}
   .proj-section p{color:var(--ink-soft);font-size:17px;line-height:1.65;max-width:680px;margin-bottom:10px;}
   .proj-section p:last-child{margin-bottom:0;}
   .check-list{list-style:none;}
@@ -445,19 +456,19 @@
 
   /* ---------- SKILLS ---------- */
   .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
-  .skill-col h3{font-family:'Public Sans',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:16px;}
+  .skill-col h3{font-family:'Public Sans',sans-serif;font-weight:700;font-size:16px;color:var(--accent-text);margin-bottom:16px;}
   .chip-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px;}
   .chip{display:inline-block;white-space:nowrap;background:var(--surface-2);border:1px solid var(--line-strong);border-radius:10px;padding:8px 15px;font-size:15.5px;color:var(--ink-soft);line-height:1.3;}
   @media (max-width:1100px){.skills-grid{grid-template-columns:1fr;gap:28px;}}
   @media (max-width:420px){.chip{white-space:normal;}}
 
   .cert-head{margin-top:64px;display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line-strong);padding-bottom:14px;}
-  .cert-head h4{font-family:'Public Sans',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);}
+  .cert-head h4{font-family:'Public Sans',sans-serif;font-weight:700;font-size:16px;color:var(--accent-text);}
   .cert-head .cert-count{font-size:14.5px;color:var(--slate);white-space:nowrap;}
   .cert-grid{margin-top:6px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 40px;}
   .cert-row{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:16px;}
   .cert-row .c-name{color:var(--ink);}
-  .cert-row .c-meta{font-family:'Public Sans',sans-serif;font-size:13px;color:var(--accent);white-space:nowrap;}
+  .cert-row .c-meta{font-family:'Public Sans',sans-serif;font-size:13px;color:var(--accent-text);white-space:nowrap;}
 
   /* ---------- CONTACT ---------- */
   .contact{background:var(--bg-alt);}
@@ -474,7 +485,7 @@
   .contact-box p{color:var(--ink-soft);margin-top:14px;max-width:420px;position:relative;z-index:1;}
   .contact-actions{display:flex;flex-direction:column;gap:14px;position:relative;z-index:1;}
   .contact-actions .btn{justify-content:center;}
-  .contact-actions .btn-primary{background:var(--accent);color:var(--navy-deep);}
+  .contact-actions .btn-primary{background:var(--accent);color:#fff;}
   .contact-actions .btn-ghost{border-color:var(--line-strong);color:var(--ink);}
   .meta-line{margin-top:22px;font-family:'Public Sans',sans-serif;font-size:14.5px;color:var(--slate);position:relative;z-index:1;}
 
@@ -482,7 +493,7 @@
   .back-to-top{
     position:fixed;bottom:28px;right:28px;z-index:90;
     width:46px;height:46px;border-radius:50%;
-    background:var(--accent);color:var(--navy-deep);border:none;cursor:pointer;
+    background:var(--accent);color:#fff;border:none;cursor:pointer;
     display:flex;align-items:center;justify-content:center;
     box-shadow:var(--shadow);
     opacity:0;pointer-events:none;transform:translateY(10px);
@@ -524,19 +535,16 @@
 
 /* ── ROTATOR ── */
 .rotator-wrap{text-align:center;padding:0 1rem;}
-.rotator-card{background:var(--card-bg,#1c202f);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:2rem 2.5rem;min-height:160px;display:flex;flex-direction:column;justify-content:center;transition:opacity .4s;}
+.rotator-card{background:var(--surface);border:1px solid var(--line-strong);border-radius:10px;padding:2rem 2.5rem;min-height:160px;display:flex;flex-direction:column;justify-content:center;transition:opacity .4s;}
 .rotator-card.fade{opacity:0;}
 .rotator-stars{color:#c94f2a;font-size:18.5px;margin-bottom:1rem;letter-spacing:2px;}
-.rotator-text{font-size:16px;color:#8f95a8;line-height:1.85;font-style:italic;}
+.rotator-text{font-size:16px;color:var(--ink-soft);line-height:1.85;font-style:italic;}
 .rotator-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.25rem;}
-.rotator-btn{background:transparent;border:1px solid rgba(255,255,255,0.12);color:#8f95a8;width:36px;height:36px;border-radius:50%;font-size:20.5px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;}
-.rotator-btn:hover{border-color:#c94f2a;color:#c94f2a;}
+.rotator-btn{background:transparent;border:1px solid var(--line-strong);color:var(--ink-soft);width:36px;height:36px;border-radius:50%;font-size:20.5px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;}
+.rotator-btn:hover{border-color:var(--accent);color:var(--accent-text);}
 .rotator-dots{display:flex;gap:6px;align-items:center;}
-.rdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;transition:all .2s;}
+.rdot{width:6px;height:6px;border-radius:50%;background:var(--line-strong);cursor:pointer;transition:all .2s;}
 .rdot.on{background:#c94f2a;width:18px;border-radius:3px;}
-
-/* ── CURSOR ── */
-#cursor-glow{pointer-events:none;position:fixed;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(201,79,42,.08) 0%,transparent 70%);transform:translate(-50%,-50%);z-index:9999;transition:transform .05s;top:0;left:0;}
 
 /* ── SCROLL ANIMATIONS ── */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
@@ -551,33 +559,33 @@
 .share-opt{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:20px;font-size:14px;font-weight:600;border:none;cursor:pointer;font-family:inherit;transition:all .2s;text-decoration:none;}
 .share-li{background:#0077b5;color:#fff;}
 .share-wa{background:#25d366;color:#fff;}
-.share-cp{background:#2e3347;color:#f0ede8;border:1px solid rgba(255,255,255,0.1);}
+.share-cp{background:var(--elevated);color:var(--ink);border:1px solid var(--line-strong);}
 .share-opt:hover{transform:translateX(4px);}
 
 /* ── WEITERBILDUNGEN ── */
 .wb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.875rem;margin-top:2rem;}
-.wb-card{background:#1c202f;border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:.875rem;transition:border-color .2s;}
+.wb-card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:.875rem;transition:border-color .2s;}
 .wb-card:hover{border-color:rgba(201,79,42,.3);}
 .wb-icon{width:36px;height:36px;border-radius:6px;background:rgba(201,79,42,.1);border:1px solid rgba(201,79,42,.2);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
-.wb-name{font-size:15px;font-weight:600;color:#f0ede8;margin-bottom:3px;line-height:1.3;}
-.wb-meta{font-size:12.5px;color:#545a6e;}
+.wb-name{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:3px;line-height:1.3;}
+.wb-meta{font-size:13px;color:var(--slate);}
 
 
 .emp-rotator-wrap{text-align:center;padding:0 1rem;}
-.emp-rotator-card{background:#1c202f;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:2.5rem;min-height:220px;display:flex;flex-direction:column;justify-content:center;transition:opacity .4s;}
+.emp-rotator-card{background:var(--surface);border:1px solid var(--line-strong);border-radius:10px;padding:2.5rem;min-height:220px;display:flex;flex-direction:column;justify-content:center;transition:opacity .4s;}
 .emp-rotator-card.fade{opacity:0;}
 .emp-quote-icon{font-size:46px;color:#c94f2a;opacity:.4;line-height:1;margin-bottom:.5rem;}
-.emp-rotator-text{font-size:16px;color:#8f95a8;line-height:1.85;font-style:italic;margin-bottom:1.25rem;white-space:pre-line;text-align:left;}
-.emp-rotator-who{font-size:15px;font-weight:600;color:#f0ede8;}
-.emp-rotator-who span{font-size:14px;font-weight:400;color:#545a6e;display:block;margin-top:2px;}
+.emp-rotator-text{font-size:16px;color:var(--ink-soft);line-height:1.85;font-style:italic;margin-bottom:1.25rem;white-space:pre-line;text-align:left;}
+.emp-rotator-who{font-size:15px;font-weight:600;color:var(--ink);}
+.emp-rotator-who span{font-size:14px;font-weight:400;color:var(--slate);display:block;margin-top:2px;}
 
 
 .wb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.875rem;margin-top:2rem;}
-.wb-card{background:var(--card-bg,#1c202f);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:.875rem;transition:border-color .2s;}
+.wb-card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:.875rem;transition:border-color .2s;}
 .wb-card:hover{border-color:rgba(201,79,42,.3);}
 .wb-icon{width:36px;height:36px;border-radius:6px;background:rgba(201,79,42,.1);border:1px solid rgba(201,79,42,.2);display:flex;align-items:center;justify-content:center;font-size:18.5px;flex-shrink:0;}
-.wb-name{font-size:15px;font-weight:600;color:#f0ede8;margin-bottom:3px;line-height:1.3;}
-.wb-meta{font-size:12.5px;color:#545a6e;}
+.wb-name{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:3px;line-height:1.3;}
+.wb-meta{font-size:13px;color:var(--slate);}
 
 
 
@@ -591,8 +599,6 @@
 </head>
 <body>
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
-
-<div id="cursor-glow"></div>
 
 <div class="share-wrap">
   <div class="share-options" id="shareOpts">
@@ -615,7 +621,6 @@
       <a href="#kontakt">Kontakt</a>
     </div>
     <div class="nav-actions">
-      <a href="#kontakt" class="btn btn-primary" style="display:none" id="ctaTop">Kontakt</a>
       <button class="theme-toggle" id="themeToggle" aria-label="Farbschema wechseln">
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
@@ -660,7 +665,7 @@
   <!-- HALTUNG -->
   <section id="haltung" style="padding-top:0;">
     <div class="wrap">
-      <h2 class="eyebrow reveal" style="margin-top:8px;">Meine Haltung</h2>
+      <h2 class="haltung-title reveal">Meine Haltung</h2>
       <div class="philosophy-block reveal">
         <p class="lead">Erfolgreicher Vertrieb entsteht durch Klarheit, Struktur und Menschen, die wissen, warum sie etwas tun. Ich bin überzeugt: Nachhaltige Vertriebsergebnisse entstehen nicht durch Druck, sondern durch gute Prozesse, konsequente Führung und die Entwicklung individueller Stärken.</p>
         <p>Meine eigene Entwicklung vom operativen Vertrieb bis zur Führung einer Sales-Einheit prägt meinen Führungsstil. Ich kenne die Herausforderungen im Vertrieb aus eigener Erfahrung und verbinde fachliche Vertriebsstärke mit einer Führung, die Orientierung gibt, Verantwortung ermöglicht und Menschen weiterentwickelt.</p>
@@ -669,31 +674,24 @@
       <div class="pillars-intro reveal">Nachhaltiger Vertrieb basiert für mich auf drei Säulen:</div>
       <div class="pillars-grid reveal">
         <div class="pillar-card">
-          <div class="pillar-num">01</div>
           <h3>Klare Kommunikation</h3>
           <p>Orientierung schaffen, Erwartungen transparent machen und gemeinsam Lösungen entwickeln.</p>
         </div>
         <div class="pillar-card">
-          <div class="pillar-num">02</div>
           <h3>Strukturierte Prozesse</h3>
           <p>Vertrieb planbar machen durch klare Abläufe, Standards und kontinuierliche Verbesserung.</p>
         </div>
         <div class="pillar-card">
-          <div class="pillar-num">03</div>
           <h3>Entwicklung von Menschen</h3>
           <p>Mitarbeitende fördern, Stärken ausbauen und Teams langfristig leistungsfähig machen.</p>
         </div>
       </div>
       <p class="pillars-outro reveal">Deshalb investiere ich bewusst in die Entwicklung von Menschen, die Optimierung von Prozessen und eine datenbasierte Vertriebssteuerung. Denn nachhaltiger Vertrieb entsteht dort, wo Struktur, Motivation und Kundennutzen zusammenkommen.</p>
-    </div>
-  </section>
 
-  <!-- ÜBER MICH -->
-  <section id="ueber-mich">
-    <div class="wrap">
+      <!-- ÜBER MICH -->
+      <div id="ueber-mich" class="about-block">
       <div class="about-grid">
         <div class="about-side reveal">
-          <div class="eyebrow">Über mich</div>
           <h2 style="font-size:34px;margin-bottom:16px;">Vom operativen Vertrieb zur Sales Leadership.</h2>
           <p>Meine Karriere begann mit einer Ausbildung zum Informatikkaufmann und führte mich über den operativen Vertrieb in die Führung von Vertriebsteams. Diese Verbindung aus eigener Vertriebspraxis, Prozessverständnis und Führungserfahrung prägt heute meinen Ansatz: Ich entwickle Menschen, optimiere Abläufe und schaffe Strukturen, in denen Vertriebsteams erfolgreich arbeiten können.</p>
         </div>
@@ -719,10 +717,6 @@
               <p>Mit zunehmender Erfahrung übernahm ich immer mehr Verantwortung für die Weiterentwicklung von Vertriebsabläufen, die Unterstützung von Mitarbeitenden und die Gestaltung von Beratungsprozessen.</p>
               <p>Ich übernahm fachliche Führungsverantwortung, entwickelte Standards und Prozesse weiter, unterstützte beim Onboarding neuer Kolleginnen und Kollegen und begleitete Mitarbeitende in ihrer vertrieblichen Entwicklung.</p>
               <p>Heute leite ich eine zentrale Sales-Einheit und verbinde operative Vertriebserfahrung mit Führungsverantwortung. Mein Fokus liegt darauf, Teams weiterzuentwickeln, Vertriebsprozesse zu optimieren und Strukturen zu schaffen, die erfolgreiche Kundenberatung ermöglichen.</p>
-              <p class="story-sub">Was mich geprägt hat</p>
-              <p>Meine berufliche Entwicklung wurde durch unterschiedliche Vertriebswelten geprägt - vom direkten Kundengespräch über B2B-Vertrieb und Recruiting bis zur Führung von Vertriebsteams.</p>
-              <p>Dabei habe ich gelernt: Nachhaltiger Vertrieb entsteht nicht durch kurzfristigen Druck, sondern durch klare Ziele, gute Prozesse und Menschen, die wissen, welchen Beitrag sie leisten.</p>
-              <p>Diese Überzeugung prägt meinen Führungsstil bis heute: klare Kommunikation, verlässliche Zusammenarbeit und die Entwicklung von Menschen als Grundlage für erfolgreiche Vertriebsteams.</p>
             </div></div>
           </div>
 
@@ -798,7 +792,6 @@
             </div>
             <div class="story-body"><div class="story-body-inner">
               <p>Heute leite ich das Sales-Team der GFN und trage die fachliche sowie disziplinarische Verantwortung für fünf Mitarbeitende. Darüber hinaus vertrete ich die Leitung der Direktberatung mit weiteren sechs Kolleginnen und Kollegen.</p>
-              <p>Viele der Grundsätze, nach denen ich heute führe, sind aus meiner langjährigen Vertriebspraxis entstanden - im Vertrieb der Personaldienstleistungen und Bildungsdienstleistungen. Dabei habe ich gelernt: Erfolgreiche Teams entstehen nicht durch kurzfristigen Druck, sondern durch Vertrauen, klare Strukturen und eine Führung, die Menschen ernst nimmt.</p>
               <p>Führung bedeutet für mich nicht, Antworten vorzugeben, sondern Orientierung zu schaffen. Ich arbeite bewusst mit Fragen, höre zu und entwickle gemeinsam mit meinem Team Lösungen. Mein Anspruch ist es, Rahmenbedingungen zu schaffen, in denen Mitarbeitende Verantwortung übernehmen, ihre Stärken entwickeln und erfolgreich arbeiten können.</p>
               <p>Neben der Entwicklung von Menschen beschäftige ich mich intensiv mit der Weiterentwicklung von Vertriebsprozessen. Klare Abläufe, transparente Kennzahlen, strukturierte Follow-up-Prozesse und der sinnvolle Einsatz digitaler Werkzeuge helfen dabei, Vertrieb effizienter zu gestalten und mehr Raum für hochwertige Kundenberatung zu schaffen.</p>
               <p>Mein beruflicher Weg hat mich vom operativen Vertrieb in der Personaldienstleistung über den Aufbau eines AZAV-zertifizierten Bildungsträgers bis in die Führung einer zentralen Sales-Einheit geführt. Jede Station hat meinen Blick auf Vertrieb erweitert: auf Kundenbedürfnisse, Prozesse, Qualität und die Entwicklung von Menschen.</p>
@@ -810,6 +803,7 @@
 
         </div>
       </div>
+      </div>
     </div>
   </section>
 
@@ -817,7 +811,6 @@
   <section id="werdegang" style="background:var(--bg-alt);">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">Werdegang</div>
         <h2>Stationen, die aufeinander aufbauen.</h2>
         <p>Vom operativen Vertrieb bis zur disziplinarischen Führung - jede Station brachte neue Verantwortung.</p>
       </div>
@@ -844,6 +837,12 @@
               <li>Identifikation und Umsetzung von Digitalisierungs- und Automatisierungspotenzialen</li>
               <li>Sicherstellung einer kundenorientierten, qualitätsgesicherten und AZAV-konformen Erstberatung</li>
               <li>Enge Zusammenarbeit mit relevanten Business Units</li>
+            </ul>
+            <ul class="proj-teaser" aria-label="Projekte in dieser Station">
+              <li><button type="button" onclick="openProj(this)">Entwicklung eines automatisierten Management-Cockpits zur Steuerung der Kursauslastung</button></li>
+              <li><button type="button" onclick="openProj(this)">KI-gestützter Voice-Agent im Inbound-Vertrieb</button></li>
+              <li><button type="button" onclick="openProj(this)">Automatisiertes Kapazitäts-Dashboard mit Echtzeit-Alarmfunktion</button></li>
+              <li><button type="button" onclick="openProj(this)">Strukturierte Follow-up-Kommunikation im Bildungsvertrieb</button></li>
             </ul>
             <div class="proj-toggle" onclick="toggleProj(this)">Projekte ansehen <span>→</span></div>
             <div class="proj-list">
@@ -921,7 +920,7 @@
               <li>Erstellung und Weiterentwicklung von Arbeitsanweisungen und Beratungsstandards</li>
               <li>Enge Zusammenarbeit mit Führungskräften und bereichsübergreifenden Fachbereichen</li>
             </ul>
-            <div class="highlight-box"><b class="mono" style="color:var(--accent)">17 Monate:</b> über 3 Mio. € Umsatzbeitrag bei 4,96/5 Bewertung, 99,3 % Zufriedenheit und 164 verifizierten Stimmen - in den Bereichen FbW, AVGS und QCG.</div>
+            <div class="highlight-box"><b class="mono" style="color:var(--accent-text)">17 Monate:</b> über 3 Mio. € Umsatzbeitrag bei 4,96/5 Bewertung, 99,3 % Zufriedenheit und 164 verifizierten Stimmen - in den Bereichen FbW, AVGS und QCG.</div>
           </div>
         </div>
 
@@ -940,6 +939,9 @@
               <li>Analyse und Optimierung von Vertriebs-, Beratungs- und Verwaltungsprozessen</li>
               <li>Koordination und Beantragung von AZAV-Maßnahmenummern</li>
               <li>Sicherstellung prozesskonformer Abläufe und Qualitätsstandards im Bildungsbetrieb</li>
+            </ul>
+            <ul class="proj-teaser" aria-label="Projekte in dieser Station">
+              <li><button type="button" onclick="openProj(this)">Entwicklung eines AZAV-konformen Qualitätsmanagementsystems</button></li>
             </ul>
             <div class="proj-toggle" onclick="toggleProj(this)">Projekte ansehen <span>→</span></div>
             <div class="proj-list">
@@ -973,6 +975,10 @@
               <li>Vertrags- und Honorarverhandlungen mit Kunden, Kandidaten und Freelancern</li>
               <li>Entwicklung von Recruiting- und Personalmarketingstrategien</li>
               <li>Aufbau einer zentralen Datenbank für Aufträge und Kandidaten</li>
+            </ul>
+            <ul class="proj-teaser" aria-label="Projekte in dieser Station">
+              <li><button type="button" onclick="openProj(this)">Aufbau einer zentralen Auftrags- und Kandidatendatenbank mit Dokumentenverwaltung</button></li>
+              <li><button type="button" onclick="openProj(this)">Erlangung der Arbeitnehmerüberlassung (AÜG)</button></li>
             </ul>
             <div class="proj-toggle" onclick="toggleProj(this)">Projekte ansehen <span>→</span></div>
             <div class="proj-list">
@@ -1014,7 +1020,6 @@
   <section id="referenzen">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">Referenzen</div>
         <h2>Was andere über die Zusammenarbeit sagen.</h2>
         <p>Rückmeldungen von Kundinnen und Kunden aus der Beratung sowie Einschätzungen von Kolleginnen und Kollegen und Geschäftspartnern.</p>
       </div>
@@ -1057,7 +1062,6 @@
   <section id="skills" style="background:var(--bg-alt);">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">Schwerpunkte</div>
         <h2>Sales, Führung, Prozesse.</h2>
       </div>
       <div class="skills-grid reveal">
@@ -1112,8 +1116,7 @@
   <section id="weiterbildung" style="padding:4rem 0;">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">Weiterbildungen &amp; Zertifikate</div>
-        <h2>Kontinuierlich. Gezielt. Relevant.</h2>
+        <h2>Weiterbildungen und Zertifikate</h2>
       </div>
       <div class="wb-grid reveal">
         <div class="wb-card"><div class="wb-icon" aria-hidden="true">🤖</div><div><div class="wb-name">AI Foundations</div><div class="wb-meta">OpenAI &middot; Juni 2026</div></div></div>
@@ -1171,12 +1174,10 @@
 <script>
   // header scroll state
   const header = document.getElementById('siteHeader');
-  const ctaTop = document.getElementById('ctaTop');
   const backToTop = document.getElementById('backToTop');
   window.addEventListener('scroll', () => {
     const sc = window.scrollY > 20;
     header.classList.toggle('scrolled', sc);
-    ctaTop.style.display = window.scrollY > 400 ? 'inline-flex' : 'none';
     backToTop.classList.toggle('show', window.scrollY > 500);
   });
   backToTop.addEventListener('click', () => {
@@ -1232,8 +1233,21 @@
   function toggleProj(el){
     const list = el.nextElementSibling;
     list.classList.toggle('open');
+    el.closest('.job-title').classList.toggle('projects-open', list.classList.contains('open'));
     el.querySelector('span').textContent = list.classList.contains('open') ? '↓' : '→';
     el.setAttribute('aria-expanded', list.classList.contains('open') ? 'true' : 'false');
+  }
+
+  function openProj(btn){
+    var jt = btn.closest('.job-title');
+    var toggle = jt.querySelector('.proj-toggle');
+    var list = jt.querySelector('.proj-list');
+    var idx = Array.prototype.indexOf.call(jt.querySelectorAll('.proj-teaser button'), btn);
+    if(!list.classList.contains('open')) toggle.click();
+    setTimeout(function(){
+      var card = list.querySelectorAll('.proj-card')[idx];
+      if(card) card.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 450);
   }
 
   // scroll reveal
@@ -1255,13 +1269,6 @@
 
 
 <script>
-// ── CURSOR GLOW ──
-var cg = document.getElementById('cursor-glow');
-document.addEventListener('mousemove', function(e) {
-  cg.style.left = e.clientX + 'px';
-  cg.style.top = e.clientY + 'px';
-});
-
 // ── SCROLL REVEAL ──
 var reveals = document.querySelectorAll('.reveal');
 var ro = new IntersectionObserver(function(entries) {
@@ -1310,8 +1317,18 @@ function rotatorRender() {
 }
 function rotatorNext(){ri=(ri+1)%reviews.length;rotatorRender();resetTimer();}
 function rotatorPrev(){ri=(ri-1+reviews.length)%reviews.length;rotatorRender();resetTimer();}
-function resetTimer(){clearInterval(rtimer);rtimer=setInterval(rotatorNext,9000);}
-document.addEventListener('DOMContentLoaded',function(){rotatorRender();rtimer=setInterval(rotatorNext,9000);});
+var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function resetTimer(){clearInterval(rtimer);if(!reduceMotion){rtimer=setInterval(rotatorNext,9000);}}
+document.addEventListener('DOMContentLoaded',function(){
+  rotatorRender();resetTimer();
+  var w=document.querySelector('.rotator-wrap');
+  if(w){
+    w.addEventListener('mouseenter',function(){clearInterval(rtimer);});
+    w.addEventListener('mouseleave',resetTimer);
+    w.addEventListener('focusin',function(){clearInterval(rtimer);});
+    w.addEventListener('focusout',resetTimer);
+  }
+});
 
 // ── SHARE ──
 function toggleShare(){var o=document.getElementById('shareOpts');var on=o.classList.toggle('on');var b=document.querySelector('.share-main-btn');if(b)b.setAttribute('aria-expanded',on?'true':'false');}
@@ -1351,8 +1368,17 @@ function empRender() {
 }
 function empNext(){ei=(ei+1)%emps.length;empRender();resetEmpTimer();}
 function empPrev(){ei=(ei-1+emps.length)%emps.length;empRender();resetEmpTimer();}
-function resetEmpTimer(){clearInterval(etimer);etimer=setInterval(empNext,20000);}
-document.addEventListener('DOMContentLoaded',function(){empRender();etimer=setInterval(empNext,20000);});
+function resetEmpTimer(){clearInterval(etimer);}
+document.addEventListener('DOMContentLoaded',function(){empRender();});
+
+// ── ERSTER AUFKLAPPER OFFEN ──
+document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('.story-item .story-head');
+  if(h && !h.parentElement.classList.contains('open')){ toggleStory(h); }
+});
+window.addEventListener('load',function(){
+  document.querySelectorAll('.story-item.open .story-body').forEach(function(b){ b.style.maxHeight=b.scrollHeight+'px'; });
+});
 
 // ── THEME TOGGLE ──
 (function(){
