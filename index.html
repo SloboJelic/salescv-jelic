@@ -595,6 +595,41 @@
   .skip-link:focus{left:16px;}
   .back-to-top{bottom:92px;}
   @media(max-width:640px){.back-to-top{bottom:74px;right:18px;}}
+
+/* ── HANDY ── */
+h1,h2,h3,h4{overflow-wrap:break-word;hyphens:auto;}
+.job>*,.about-grid>*,.hero-grid>*,.contact-box>*,.skills-grid>*,.pillars-grid>*{min-width:0;}
+.proj-toggle{padding:10px 0;min-height:44px;align-items:center;}
+.rdot{position:relative;}
+.rdot::after{content:"";position:absolute;inset:-14px -3px;}
+@media (max-width:980px){
+  .ref-subhead .ref-count{white-space:normal;}
+}
+@media (max-width:640px){
+  .share-wrap{left:18px;bottom:18px;}
+  .share-main-btn{width:48px;height:48px;padding:0;justify-content:center;border-radius:50%;font-size:19px;}
+  .share-main-btn .share-label{display:none;}
+  .sticky-cta{width:48px;height:48px;padding:0;justify-content:center;}
+  .sticky-cta svg{width:19px;height:19px;}
+}
+
+.about-side h2{line-height:1.2;}
+.job-title h3{line-height:1.2;margin-bottom:10px;}
+.job-title .job-note{margin:0 0 16px;}
+.story-head h3{line-height:1.3;}
+.btn{text-align:center;}
+.rotator-stars{text-align:center;}
+@media (max-width:640px){
+  .rotator-wrap,.emp-rotator-wrap{padding:0;}
+  .rotator-wrap{text-align:left;}
+  .rotator-card,.emp-rotator-card{padding:1.5rem 1.25rem;}
+  .rotator-text,.emp-rotator-text{font-size:15.5px;line-height:1.75;}
+  .proj-card{padding:22px 18px;}
+}
+@media (max-width:560px){
+  .hero-cta{flex-direction:column;}
+  .hero-cta .btn{flex:none;width:100%;}
+}
 </style>
 </head>
 <body>
@@ -606,7 +641,7 @@
     <a class="share-opt share-wa" href="https://wa.me/?text=Schau%20mal%20meinen%20Sales-CV%3A%20https%3A%2F%2Fwww.salescv-jelic.de" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
     <button class="share-opt share-cp" onclick="copyLink()">🔗 Link kopieren</button>
   </div>
-  <button class="share-main-btn" onclick="toggleShare()" aria-expanded="false" aria-controls="shareOpts">↗ Seite teilen</button>
+  <button class="share-main-btn" onclick="toggleShare()" aria-expanded="false" aria-controls="shareOpts" aria-label="Seite teilen"><span aria-hidden="true">↗</span><span class="share-label">&nbsp;Seite teilen</span></button>
 </div>
 
 
@@ -920,7 +955,7 @@
               <li>Erstellung und Weiterentwicklung von Arbeitsanweisungen und Beratungsstandards</li>
               <li>Enge Zusammenarbeit mit Führungskräften und bereichsübergreifenden Fachbereichen</li>
             </ul>
-            <div class="highlight-box"><b class="mono" style="color:var(--accent-text)">17 Monate:</b> über 3 Mio. € Umsatzbeitrag bei 4,96/5 Bewertung, 99,3 % Zufriedenheit und 164 verifizierten Stimmen - in den Bereichen FbW, AVGS und QCG.</div>
+            <div class="highlight-box"><b class="mono" style="color:var(--accent-text)">17 Monate:</b> über 3 Mio. € Umsatzbeitrag bei 4,96/5 Bewertung, 99,3 % Zufriedenheit und 164 verifizierten Stimmen - in den Bereichen FbW, AVGS und QCG. Die Bewertungen stammen aus dem E-Termin-Kundenbewertungssystem.</div>
           </div>
         </div>
 
@@ -1025,7 +1060,7 @@
       </div>
       <div class="ref-subhead reveal">
         <h3>Kundenstimmen</h3>
-        <span class="ref-count">164 verifizierte Bewertungen · Ø 4,96 / 5 <span style="opacity:.7;">(als Senior Sales Manager Bildungsvertrieb, Okt. 2023 - Apr. 2025)</span></span>
+        <span class="ref-count">164 verifizierte Bewertungen · Ø 4,96 / 5 <span style="opacity:.7;">(als Senior Sales Manager Bildungsvertrieb, Okt. 2023 - Apr. 2025; Quelle: E-Termin-Kundenbewertungssystem)</span></span>
       </div>
       <div class="rotator-wrap reveal">
   <div class="rotator-card" id="rotatorCard">
