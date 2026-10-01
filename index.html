@@ -431,8 +431,8 @@
 
   /* ---------- TESTIMONIALS ---------- */
   .ref-subhead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:22px;border-bottom:1px solid var(--line);padding-bottom:14px;}
-  .ref-subhead h3{font-size:22px;}
-  .ref-subhead .ref-count{font-size:14.5px;color:var(--slate);white-space:nowrap;}
+  .ref-subhead h3{font-size:22px;flex-shrink:0;white-space:nowrap;hyphens:manual;}
+  .ref-subhead .ref-count{font-size:14.5px;color:var(--slate);white-space:normal;text-align:right;min-width:0;}
   .quotes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   .quote-card{
     background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;
@@ -522,6 +522,8 @@
     .about-grid{grid-template-columns:1fr;gap:30px;}
     .job{grid-template-columns:1fr;gap:14px;}
     .ref-subhead{flex-direction:column;align-items:flex-start;gap:4px;}
+    .ref-subhead .ref-count{text-align:left;}
+    .ref-subhead h3{white-space:normal;}
     .quotes-grid{grid-template-columns:1fr;}
     .rec-grid{grid-template-columns:1fr;}
     .skills-grid{grid-template-columns:1fr;gap:28px;}
@@ -601,7 +603,8 @@
   @media(max-width:640px){.back-to-top{bottom:74px;right:18px;}}
 
 /* ── HANDY ── */
-h1,h2,h3,h4{overflow-wrap:break-word;hyphens:auto;}
+h1,h2,h3,h4{overflow-wrap:break-word;hyphens:manual;}
+@media (max-width:560px){h1,h2,h3,h4{hyphens:auto;}}
 .job>*,.about-grid>*,.hero-grid>*,.contact-box>*,.skills-grid>*,.pillars-grid>*{min-width:0;}
 .proj-toggle{padding:10px 0;min-height:44px;align-items:center;}
 .rdot{position:relative;}
