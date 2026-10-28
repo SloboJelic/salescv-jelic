@@ -427,6 +427,18 @@
     padding:18px 22px;font-size:16.5px;color:var(--ink);
   }
 
+
+  /* Stationen: Unternehmensabsatz, Schwerpunkte, Pfeil-Listen */
+  .job-about{margin:0 0 20px;}
+  .job-about .lbl{font-weight:700;font-size:15px;color:var(--accent-text);margin-bottom:6px;}
+  .job-about p{color:var(--ink-soft);font-size:17px;line-height:1.6;max-width:680px;}
+  .job-focus-lbl{font-weight:700;font-size:15px;color:var(--accent-text);margin:0 0 8px;}
+  .job-lead{color:var(--ink);font-size:17px;font-weight:600;margin:0 0 12px;max-width:680px;}
+  .arrow-list{list-style:none;}
+  .arrow-list li{color:var(--ink-soft);font-size:17px;line-height:1.6;margin-bottom:8px;padding-left:26px;position:relative;}
+  .arrow-list li::before{content:"→";position:absolute;left:0;top:0;color:var(--accent);font-weight:700;}
+  .proj-section p + .arrow-list{margin-top:4px;}
+
   /* ---------- IMPACT / NUMBERS ---------- */
 
   /* ---------- TESTIMONIALS ---------- */
@@ -767,33 +779,32 @@ h1,h2,h3,h4{overflow-wrap:break-word;hyphens:manual;}
           <span class="job-badge">Aktuell</span>
           <div class="job-meta"><span class="dates">Mai 2025 - heute</span>GFN GmbH<br>Remote</div>
           <div class="job-title">
-            <h3>Leitung Zentrale Erstberatung</h3>
-            <ul>
-              <li>Inbound-Erreichbarkeit von 82 % auf 93 % gesteigert (2025)</li>
-              <li>Fachliche und disziplinarische Führung der Zentralen Erstberatung (5 MA)</li>
-              <li>Stellvertretende Leitung der Direktberatung (6 MA)</li>
+            <h3>Leitung Zentrale Erstberatung (inkl. Vertretung Direktberatung)</h3>
+            <div class="job-about"><div class="lbl">Über das Unternehmen</div><p>Einer der größten AZAV-zertifizierten IT-Bildungsanbieter in Deutschland mit Fokus auf digitales Lernen im innovativen Blended-Learning-Format. Das Portfolio umfasst geförderte IHK-Umschulungen, geförderte Coachings sowie zukunftsweisende Weiterbildungen (FbW, QCG) in den Bereichen KI, IT-Administration, IT-Grundlagen, Programmierung, SAP, Projektmanagement, Datenschutz &amp; Qualitätsmanagement, Online-Marketing und Mediendesign.</p></div>
+            <div class="job-focus-lbl">Schwerpunkte</div>
+            <ul class="job-list">
+              <li>Steigerung der Inbound-Erreichbarkeit von 82 % auf 93 % im Jahr 2025</li>
+              <li>Fachliche und disziplinarische Führung der Zentralen Erstberatung (5 Mitarbeitende)</li>
+              <li>Krankheits- und Urlaubsvertretung für die Leitung der Direktberatung (6 MA)</li>
+              <li>Verantwortung für Personaleinsatz-, Schicht- und Kapazitätsplanung sowie Recruiting</li>
               <li>Operative Steuerung des Inbound-Beratungsprozesses über alle Eingangskanäle</li>
               <li>Sicherstellung hoher telefonischer Erreichbarkeit und Servicequalität innerhalb der Servicezeiten</li>
               <li>Steuerung von Anrufvolumen, Service-Level, Abbruchquote und Bearbeitungszeiten</li>
               <li>Steuerung und Optimierung des Lead-Managements</li>
+              <li>Coaching, Einarbeitung und Weiterentwicklung des Teams</li>
               <li>Optimierung der Customer Journey bis zur qualifizierten Übergabe an die Beratung</li>
-              <li>Unterstützung des Teams bei Erstorientierung und Bedarfsabklärung</li>
-              <li>Personaleinsatz-, Schicht- und Kapazitätsplanung sowie Recruiting</li>
-              <li>Aktive Mitarbeit in Telefonie und Beratung bei Auslastungsspitzen</li>
-              <li>Sicherstellung einer sauberen CRM-Dokumentation aller Kontakte</li>
-              <li>Coaching, Einarbeitung und Weiterentwicklung der Mitarbeitenden</li>
-              <li>Begleitung des Teams durch Veränderungen</li>
-              <li>Entwicklung einheitlicher Beratungs-, Qualitäts- und Prozessstandards</li>
-              <li>Konzeption und Durchführung vertriebsorientierter Trainings</li>
-              <li>Umsetzung von Digitalisierungs- und Automatisierungspotenzialen</li>
-              <li>Sicherstellung einer qualitätsgesicherten, AZAV-konformen Erstberatung</li>
-              <li>Zusammenarbeit mit den Business Units</li>
+              <li>Aktive Unterstützung im operativen Tagesgeschäft und in der Beratung bei Spitzen</li>
+              <li>Sicherstellung einer sauberen CRM-Dokumentation</li>
+              <li>Entwicklung und Implementierung einheitlicher Beratungs-, Qualitäts- und Prozessstandards</li>
+              <li>Konzeption und Durchführung vertriebsorientierter Trainings für die Mitarbeitenden</li>
+              <li>Identifikation und Umsetzung von Digitalisierungs- und Automatisierungspotenzialen</li>
+              <li>Enge Zusammenarbeit und Abstimmung mit den verschiedenen Business Units</li>
             </ul>
             <ul class="proj-teaser" aria-label="Projekte in dieser Station">
               <li><button type="button" onclick="openProj(this)">Entwicklung eines automatisierten Management-Cockpits zur Steuerung der Kursauslastung</button></li>
-              <li><button type="button" onclick="openProj(this)">KI-gestützter Voice-Agent im Inbound-Vertrieb</button></li>
-              <li><button type="button" onclick="openProj(this)">Automatisiertes Kapazitäts-Dashboard mit Echtzeit-Alarmfunktion</button></li>
-              <li><button type="button" onclick="openProj(this)">Strukturierte Follow-up-Kommunikation im Bildungsvertrieb</button></li>
+              <li><button type="button" onclick="openProj(this)">Einführung eines KI-Voice-Agents im Inbound-Vertrieb</button></li>
+              <li><button type="button" onclick="openProj(this)">Automatisiertes Kapazitäts-Dashboard mit Alarmfunktion</button></li>
+              <li><button type="button" onclick="openProj(this)">Fünfstufige Follow-up-Strecke im CRM: Lead-Management im Bildungsvertrieb</button></li>
             </ul>
             <div class="proj-toggle" onclick="toggleProj(this)">Projekte ansehen <span>→</span></div>
             <div class="proj-list">
@@ -812,45 +823,61 @@ h1,h2,h3,h4{overflow-wrap:break-word;hyphens:manual;}
               </div>
 
               <div class="proj-card">
-                <h4>KI-gestützter Voice-Agent im Inbound-Vertrieb</h4>
+                <h4>Einführung eines KI-Voice-Agents im Inbound-Vertrieb</h4>
                 <div class="proj-meta"><span class="pd">Dez. 2025 - Juli 2026</span><span class="proj-org">Mit GFN verbunden</span></div>
-                <div class="proj-section"><div class="lbl">Ausgangslage</div><p>Wenn alle Beratenden im Gespräch sind, landen eingehende Anrufe in der Warteschleife - und viele Interessenten legen auf, bevor sie durchkommen. Jeder dieser Anrufe ist ein potenzieller Lead, der verloren geht. Besonders kritisch war das in Stoßzeiten, also genau dann, wenn die meisten Menschen anrufen.</p></div>
-                <div class="proj-section"><div class="lbl">Meine Rolle</div><p>Ich habe das Projekt von der Anbieterauswahl bis zum Livegang eigenständig verantwortet. Zunächst habe ich den Markt gesichtet und verschiedene Anbieter nach Datenschutz (DSGVO, Serverstandort, ISO-Zertifizierung), Funktionsumfang und Kosten bewertet. Nach Gesprächen mit mehreren Anbietern fiel die Entscheidung. Anschließend habe ich die Gesprächslogik entwickelt - Leitfaden, Ablauf und Übergabe ans Team. Sind alle Beratenden belegt, übernimmt der Voice-Agent den Anruf, erfasst das Anliegen und schickt dem Team automatisch eine Zusammenfassung per E-Mail, damit direkt zurückgerufen werden kann.</p></div>
-                <div class="proj-section"><div class="lbl">Ergebnis</div><p>Seit Juli 2026 live im Einsatz in der Erstberatung.</p></div>
-                <div class="proj-section"><div class="lbl">Konkreter Mehrwert</div><ul class="check-list">
-                  <li>Kein Anruf geht mehr unbeantwortet verloren, auch nicht in Stoßzeiten</li>
-                  <li>Anbieterauswahl auf Basis klarer Datenschutz- und Qualitätskriterien statt Bauchentscheidung</li>
-                  <li>Nahtlose Übergabe ans Team durch automatische Anliegenerfassung - schnellere Rückrufe ohne Informationsverlust</li>
+                <div class="proj-section"><div class="lbl">Ausgangslage</div><p>Sind alle Beratenden im Gespräch, landen eingehende Anrufe in der Warteschleife, und viele Interessenten legen auf, bevor sie durchkommen. Jeder dieser Anrufe ist ein potenzieller Lead, der verloren geht. Besonders kritisch war das in den Stoßzeiten, wenn die meisten Menschen anrufen.</p></div>
+                <div class="proj-section"><div class="lbl">Meine Rolle</div><ul class="arrow-list">
+                  <li>Projekt von der Anbieterauswahl bis zum Livegang geleitet</li>
+                  <li>Markt gesichtet und Anbieter nach Funktionsumfang und Kosten bewertet</li>
+                  <li>Datenschutz geprüft: DSGVO, Serverstandort, ISO-Zertifizierung</li>
+                  <li>Nach Gesprächen mit mehreren Anbietern entschieden</li>
+                  <li>Gesprächslogik entwickelt: Leitfaden, Ablauf, Übergabe ans Team</li>
+                  <li>Voice-Agent nimmt den Anruf an und erfasst das Anliegen</li>
+                  <li>Das Team erhält automatisch eine Zusammenfassung per E-Mail</li>
+                </ul></div>
+                <div class="proj-section"><div class="lbl">Ergebnis</div><p>Seit Juli 2026 im Einsatz in der Erstberatung. Anrufe, die früher in der Warteschleife endeten, werden angenommen und das Anliegen wird erfasst.</p><ul class="arrow-list">
+                  <li>Anrufe in Stoßzeiten werden aufgefangen</li>
+                  <li>Rückrufe mit vollständigem Anliegen, ohne Informationsverlust</li>
                 </ul></div>
               </div>
 
               <div class="proj-card">
-                <h4>Automatisiertes Kapazitäts-Dashboard mit Echtzeit-Alarmfunktion</h4>
+                <h4>Automatisiertes Kapazitäts-Dashboard mit Alarmfunktion</h4>
                 <div class="proj-meta"><span class="pd">Dez. 2025 - Feb. 2026</span><span class="proj-org">Mit GFN verbunden</span></div>
-                <div class="proj-section"><div class="lbl">Ausgangslage</div><p>Als Leitung der zentralen Inbound-Kundenberatung hatte ich immer wieder dasselbe Problem: Ich wusste nie auf einen Blick, wie ausgelastet wir in den nächsten Tagen sind. Die Buchungsplattform zeigte Termine nur einzeln an, nicht als Gesamtbild - für eine Kapazitätsübersicht musste ich die Slots manuell zusammensuchen. Engpässe fielen mir dadurch oft erst auf, wenn bereits keine Termine mehr frei waren.</p></div>
-                <div class="proj-section"><div class="lbl">Meine Rolle</div><p>Ich habe den fachlichen Bedarf definiert, mit der IT abgestimmt und die Anforderungen aufbereitet. Entstanden ist ein Dashboard, das die freien Beratungsslots der nächsten 14 Tage tagesaktuell anzeigt, getrennt nach Beratungsart und Kanal, ohne manuelle Pflege. Im nächsten Schritt habe ich die Erweiterung um eine Alarmfunktion angestoßen und fachlich verantwortet: Erreicht die Auslastung einen festgelegten Schwellenwert, erhalten die Führungskräfte automatisch eine Nachricht über Microsoft Teams.</p></div>
-                <div class="proj-section"><div class="lbl">Ergebnis</div><p>Eine Kapazitätsübersicht in Echtzeit, die Engpässe sichtbar macht, bevor sie zum Problem werden.</p></div>
-                <div class="proj-section"><div class="lbl">Konkreter Mehrwert</div><ul class="check-list">
-                  <li>Manuelle Kapazitätsprüfungen entfallen vollständig - <b>über 100 Stunden</b> Aufwand pro Jahr eingespart</li>
-                  <li>Engpässe werden erkannt, bevor sie die Terminvergabe treffen</li>
-                  <li>Personaleinsatz lässt sich frühzeitig anpassen, da die Auslastung zwei Wochen im Voraus sichtbar ist</li>
+                <div class="proj-section"><div class="lbl">Ausgangslage</div><p>Als Leitung der Zentralen Erstberatung fehlte mir ein schneller Überblick über die Auslastung der kommenden Tage. Die Buchungsplattform zeigte Termine nur einzeln an, nicht als Gesamtbild. Für eine Kapazitätsübersicht mussten die freien Slots manuell zusammengesucht werden. Engpässe fielen dadurch oft erst auf, wenn bereits keine Termine mehr frei waren.</p></div>
+                <div class="proj-section"><div class="lbl">Meine Rolle</div><ul class="arrow-list">
+                  <li>Fachlichen Bedarf definiert und mit der IT abgestimmt</li>
+                  <li>Anforderungen aufbereitet und die Umsetzung begleitet</li>
+                  <li>Dashboard: freie Slots der nächsten 14 Tage, tagesaktuell</li>
+                  <li>Aufgeteilt nach Beratungsart und Kanal, ohne manuelle Pflege</li>
+                  <li>Alarmfunktion angestoßen und fachlich verantwortet</li>
+                  <li>Bei Schwellenwert erhalten Führungskräfte eine Teams-Nachricht</li>
+                </ul></div>
+                <div class="proj-section"><div class="lbl">Ergebnis</div><p>Eine automatische Kapazitätsübersicht, die Engpässe sichtbar macht, bevor keine Termine mehr frei sind.</p><ul class="arrow-list">
+                  <li>Manuelle Kapazitätsprüfung entfällt, über 100 Stunden pro Jahr gespart</li>
+                  <li>Auslastung zwei Wochen im Voraus sichtbar</li>
+                  <li>Personaleinsatz früher anpassbar</li>
                 </ul></div>
               </div>
 
               <div class="proj-card">
-                <h4>Strukturierte Follow-up-Kommunikation im Bildungsvertrieb</h4>
+                <h4>Fünfstufige Follow-up-Strecke im CRM: Lead-Management im Bildungsvertrieb</h4>
                 <div class="proj-meta"><span class="pd">Dez. 2025 - Jan. 2026</span><span class="proj-org">Mit GFN verbunden</span></div>
-                <div class="proj-section"><div class="lbl">Ausgangslage</div><p>Nach dem Erstkontakt erhielten Interessenten Follow-up-Mails, die veraltet und nicht aufeinander abgestimmt waren. Wer eine Mail bekam, wusste oft nicht, was als Nächstes passiert oder was von ihm erwartet wird.</p></div>
-                <div class="proj-section"><div class="lbl">Meine Rolle</div><p>Ich habe das Projekt allein verantwortet - von der Analyse bis zur Umsetzung im CRM. Zunächst habe ich geprüft, welche Mails es überhaupt gab, was davon funktionierte und wo die Lücken lagen. Daraus habe ich eine fünfstufige Sequenz entwickelt, jeweils zugeschnitten auf Weiterbildung, Umschulung, Coaching und QCG. Jede Stufe hat ein klares Ziel, einen konkreten nächsten Schritt für den Interessenten und einen festen Versandzeitpunkt. Die eigentliche Arbeit steckte dabei weniger in den Texten als in der Frage, wann welcher Kontakt sinnvoll ist, ohne dass sich jemand bedrängt fühlt.</p></div>
-                <div class="proj-section"><div class="lbl">Ergebnis</div><p>Eine einheitliche, abgestimmte Kommunikationsstrecke über alle Angebotsbereiche der Erstberatung hinweg.</p></div>
-                <div class="proj-section"><div class="lbl">Konkreter Mehrwert</div><ul class="check-list">
-                  <li><b>20 aufeinander abgestimmte Vorlagen</b>, fest im CRM hinterlegt</li>
-                  <li>Kontaktpunkte je Lead von <b>3 auf bis zu 10</b> erhöht, ohne die Interessenten zu überfordern</li>
-                  <li>Einheitliche Sprache und Klarheit über alle Angebotsbereiche der Erstberatung hinweg</li>
+                <div class="proj-section"><div class="lbl">Ausgangslage</div><p>Nach dem Erstkontakt erhielten Interessenten Follow-up-Mails, die veraltet und nicht aufeinander abgestimmt waren. Oft war unklar, was als Nächstes passiert und was von den Interessenten erwartet wird.</p></div>
+                <div class="proj-section"><div class="lbl">Meine Rolle</div><ul class="arrow-list">
+                  <li>Projekt eigenverantwortlich geleitet, von der Analyse bis zum CRM</li>
+                  <li>Bestehende Mails gesichtet: was funktioniert, wo Lücken sind</li>
+                  <li>Fünfstufige Sequenz entwickelt, je Angebotsbereich zugeschnitten</li>
+                  <li>Bereiche: Weiterbildung, Umschulung, Coaching, QCG</li>
+                  <li>Je Stufe: klares Ziel, nächster Schritt, fester Versandzeitpunkt</li>
+                  <li>Schwerpunkt: das richtige Timing, ohne zu bedrängen</li>
+                </ul></div>
+                <div class="proj-section"><div class="lbl">Ergebnis</div><p>Eine einheitliche Kommunikationsstrecke für alle Angebotsbereiche der Erstberatung, fest im CRM hinterlegt.</p><ul class="arrow-list">
+                  <li>20 abgestimmte Vorlagen (5 Stufen × 4 Bereiche)</li>
+                  <li>Kontaktpunkte je Lead von 3 auf bis zu 10 erhöht</li>
+                  <li>Einheitliche Sprache, klare nächste Schritte für Interessenten</li>
                 </ul></div>
               </div>
-
-
             </div>
           </div>
         </div>
@@ -859,53 +886,64 @@ h1,h2,h3,h4{overflow-wrap:break-word;hyphens:manual;}
           <div class="job-meta"><span class="dates">Okt. 2023 - Apr. 2025</span>GFN GmbH<br>Remote</div>
           <div class="job-title">
             <h3>Senior Sales Manager Bildungsvertrieb</h3>
-            <ul>
+            <div class="job-focus-lbl">Schwerpunkte</div>
+            <ul class="job-list">
+              <li>Rund 3 Mio. € persönlich generierter Umsatz mit geförderten Bildungsprodukten (FbW/AVGS/QCG)</li>
+              <li>Kundenbewertung von 4,96/5 bei einer Quote von 99,3 % (basierend auf 164 verifizierten Bewertungen)</li>
               <li>Beratung und Vertrieb geförderter Bildungsprodukte (FbW, AVGS, QCG) im B2C- und B2B-Umfeld</li>
-              <li>Verantwortung für den Vertriebsprozess von der Beratung bis zum Vertragsabschluss</li>
-              <li>Onboarding neuer Vertriebsmitarbeitender</li>
-              <li>Durchführung interner Produkt- und Vertriebsschulungen</li>
-              <li>Zusammenarbeit mit Kostenträgern (B2G) sowie internen und externen Stakeholdern</li>
+              <li>Steuerung des Vertriebsprozesses von der Beratung bis zum Erhalt des Gutscheins</li>
+              <li>Enge Zusammenarbeit mit Kostenträgern und Partnern (AA, Jobcenter, DRV, IHK, Transfergesellschaften)</li>
               <li>Aufbau und Optimierung strukturierter Follow-up- und Abschlussprozesse</li>
               <li>Erstellung und Weiterentwicklung von Arbeitsanweisungen und Beratungsstandards</li>
-              <li>Analyse und Optimierung von Beratungs- und Vertriebsprozessen</li>
+              <li>Analyse und Optimierung bestehender Beratungs- und Vertriebsprozesse</li>
+              <li>Strukturiertes Onboarding neuer Vertriebsmitarbeitender</li>
+              <li>Konzeption und Durchführung interner Produkt- und Vertriebsschulungen</li>
               <li>Analyse von Markt- und Kundenbedarfen zur Weiterentwicklung des Bildungsportfolios</li>
-              <li>Enge Zusammenarbeit mit Führungskräften und bereichsübergreifenden Fachbereichen</li>
+              <li>Schnittstellenarbeit und enge Zusammenarbeit mit Führungskräften und Fachbereichen</li>
             </ul>
-            <div class="highlight-box"><b class="mono" style="color:var(--accent-text)">17 Monate:</b> über 3 Mio. € Umsatzbeitrag bei 4,96/5 Bewertung, 99,3 % Zufriedenheit und 164 verifizierten Stimmen - in den Bereichen FbW, AVGS und QCG. Die Bewertungen stammen aus dem E-Termin-Kundenbewertungssystem.</div>
           </div>
         </div>
 
         <div class="job">
           <div class="job-meta"><span class="dates">Okt. 2017 - Sept. 2023</span>SAN-Akademie<br>Paderborn</div>
           <div class="job-title">
-            <h3>Senior Sales Manager Bildungsvertrieb &amp; Qualitätsmanagement (AZAV)</h3>
-            <p class="job-note">Parallele Tätigkeit zur Position bei [SAN]ITT[ innerhalb derselben Unternehmensgruppe.</p>
-            <ul>
-              <li>Fachliche Führung eines fünfköpfigen Vertriebsteams</li>
-              <li>Beratung und Vertrieb geförderter Bildungsprodukte (FbW und AVGS) im B2C-Umfeld</li>
-              <li>Aufbau, Implementierung und Weiterentwicklung des AZAV-Qualitätsmanagementsystems</li>
-              <li>Aufbau und Pflege von Kooperationen mit Kostenträgern und Stakeholdern (B2G)</li>
+            <h3>Senior Sales Manager Bildungsvertrieb | Qualitätsmanagement (AZAV) | Fachliche Teamleitung</h3>
+            <div class="job-about"><div class="lbl">Über das Unternehmen</div><p>AZAV-zertifizierter Bildungsträger für digitales Lernen, geförderte Weiterbildungen, IHK-Umschulungen und Coachings (FbW, AVGS, QCG) sowie höhere Abschlüsse (Meister, Fachwirte).</p></div>
+            <div class="job-focus-lbl">Schwerpunkte</div>
+            <p class="job-lead">Strategische Doppelrolle mit paralleler Verantwortung für zwei eigenständige Geschäftsbereiche innerhalb der Gruppe.</p>
+            <ul class="job-list">
+              <li>Fachliche Führung und Weiterentwicklung eines fünfköpfigen Vertriebsteams</li>
+              <li>Beratung und Vertrieb geförderter Bildungsprodukte (FbW/AVGS) im B2C-Umfeld</li>
               <li>Steuerung des Teilnehmerprozesses von der Erstberatung bis zum Maßnahmestart</li>
-              <li>Vorbereitung und Begleitung externer AZAV-Audits</li>
-              <li>Analyse und Optimierung von Vertriebs-, Beratungs- und Verwaltungsprozessen</li>
-              <li>Koordination und Beantragung von AZAV-Maßnahmennummern</li>
+              <li>Kooperation mit Kostenträgern &amp; Partnern (AA, Jobcenter, DRV, IHK, Transfergesellschaften)</li>
+              <li>Analyse und kontinuierliche Optimierung aller Vertriebs- und Beratungsprozesse</li>
+              <li>Aufbau, Implementierung und Weiterentwicklung des AZAV-Qualitätsmanagementsystems</li>
+              <li>Koordination, Beantragung und Verwaltung von AZAV-Maßnahmennummern</li>
+              <li>Erfolgreiche Vorbereitung und Begleitung externer Zertifizierungs- und Überwachungsaudits</li>
               <li>Sicherstellung prozesskonformer Abläufe und Qualitätsstandards im Bildungsbetrieb</li>
             </ul>
             <ul class="proj-teaser" aria-label="Projekte in dieser Station">
-              <li><button type="button" onclick="openProj(this)">Entwicklung eines AZAV-konformen Qualitätsmanagementsystems</button></li>
+              <li><button type="button" onclick="openProj(this)">Aufbau der SAN-Akademie: AZAV-Qualitätsmanagementsystem bis zur Trägerzulassung</button></li>
             </ul>
             <div class="proj-toggle" onclick="toggleProj(this)">Projekte ansehen <span>→</span></div>
             <div class="proj-list">
+
               <div class="proj-card">
-                <h4>Entwicklung eines AZAV-konformen Qualitätsmanagementsystems</h4>
+                <h4>Aufbau der SAN-Akademie: AZAV-Qualitätsmanagementsystem bis zur Trägerzulassung</h4>
                 <div class="proj-meta"><span class="pd">März 2017 - Okt. 2017</span><span class="proj-org">Mit SAN-Akademie verbunden</span></div>
-                <div class="proj-section"><div class="lbl">Ausgangslage</div><p>2017 entstand gemeinsam mit meinem damaligen Chef die Idee, IT-Fachkräfte selbst auszubilden statt sie nur zu vermitteln - daraus entstand die SAN-Akademie. Die erste große Hürde: die Trägerzulassung nach AZAV. Es gab weder ein bestehendes System noch externe Beratung, sondern nur die Verordnung selbst, die fachlichen Weisungen der Bundesagentur für Arbeit und die Empfehlungen des Beirats.</p></div>
-                <div class="proj-section"><div class="lbl">Meine Rolle</div><p>Ich habe mich vollständig in die regulatorischen Anforderungen eingearbeitet und das Qualitätsmanagementsystem von Grund auf selbst entwickelt - Prozessbeschreibungen, Arbeitsanweisungen, Checklisten und die komplette Dokumentationsstruktur für alle Nachweise. Weil ich jeden Baustein direkt aus den gesetzlichen Vorgaben abgeleitet habe, statt ein fertiges Template zu übernehmen, kannte ich am Ende zu jedem Prozess auch die Begründung dahinter. Das hat sich im Audit ausgezahlt - und bei jeder späteren Anpassung.</p></div>
-                <div class="proj-section"><div class="lbl">Ergebnis</div><p>Die Trägerzulassung nach AZAV wurde auf Basis des selbst entwickelten QM-Systems erteilt.</p></div>
-                <div class="proj-section"><div class="lbl">Konkreter Mehrwert</div><ul class="check-list">
-                  <li><b>Trägerzulassung nach AZAV</b> ohne externe Beratung eigenständig erarbeitet</li>
-                  <li>Grundlage geschaffen für die Zulassung der ersten über Bildungsgutschein geförderten Maßnahmen</li>
-                  <li>QM-System so aufgebaut, dass die jährlichen Audits in den Folgejahren <b>ohne größere Abweichungen</b> bestanden wurden</li>
+                <div class="proj-section"><div class="lbl">Ausgangslage</div><p>2017 entstand gemeinsam mit der Geschäftsführung die Idee, IT-Fachkräfte selbst auszubilden, statt sie nur zu vermitteln. Daraus ging die SAN-Akademie hervor. Die erste große Hürde war die Trägerzulassung nach AZAV. Es gab weder ein bestehendes Qualitätsmanagementsystem noch externe Beratung. Als Grundlage standen nur die Verordnung selbst, die fachlichen Weisungen der Bundesagentur für Arbeit und die Empfehlungen des Beirats zur Verfügung.</p></div>
+                <div class="proj-section"><div class="lbl">Meine Rolle</div><ul class="arrow-list">
+                  <li>In die regulatorischen Vorgaben vollständig eingearbeitet</li>
+                  <li>QM-System von Grund auf selbst entwickelt</li>
+                  <li>Prozessbeschreibungen, Arbeitsanweisungen, Checklisten erstellt</li>
+                  <li>Dokumentationsstruktur für alle Nachweise aufgebaut</li>
+                  <li>Jeden Baustein direkt aus den Vorgaben abgeleitet</li>
+                  <li>Kein Template: zu jedem Prozess ist die Begründung bekannt</li>
+                </ul></div>
+                <div class="proj-section"><div class="lbl">Ergebnis</div><p>Trägerzulassung nach AZAV auf Basis des eigenen QM-Systems erteilt.</p><ul class="arrow-list">
+                  <li>Ohne externe Beratung eigenständig erarbeitet</li>
+                  <li>Grundlage für die ersten Maßnahmen mit Bildungsgutschein</li>
+                  <li>Jährliche Audits ohne größere Abweichungen bestanden</li>
                 </ul></div>
               </div>
             </div>
@@ -915,52 +953,65 @@ h1,h2,h3,h4{overflow-wrap:break-word;hyphens:manual;}
         <div class="job">
           <div class="job-meta"><span class="dates">Juli 2014 - Sept. 2023</span>[SAN]ITT[<br>Paderborn · Hybrid</div>
           <div class="job-title">
-            <h3>Sales Consultant | B2B-Vertrieb | IT-Recruiting | Key Account Management</h3>
-            <ul>
-              <li>Fachliche Führung eines fünfköpfigen Vertriebsteams</li>
-              <li>Neukundengewinnung und Ausbau von Key Accounts</li>
-              <li>Vertrags- und Honorarverhandlungen mit Kunden und Kandidaten</li>
-              <li>Beratung zu Personalbedarf und Recruiting-Lösungen</li>
-              <li>Steuerung des Besetzungsprozesses von der Bedarfsanalyse bis zur Besetzung</li>
+            <h3>Sales Consultant &amp; Key Account Manager | Fachliche Teamleitung</h3>
+            <div class="job-about"><div class="lbl">Über das Unternehmen</div><p>Spezialisiert auf maßgeschneiderte B2B-Personallösungen in der IT-Branche mit Fokus auf IT-Dozentenvermittlung, IT-Freelancing für Endkundenprojekte sowie klassische Arbeitnehmerüberlassung (ANÜ).</p></div>
+            <div class="job-focus-lbl">Schwerpunkte</div>
+            <ul class="job-list">
+              <li>Fachliche Führung und Weiterentwicklung eines fünfköpfigen Vertriebsteams</li>
+              <li>Strategische Neukundengewinnung und Ausbau von B2B Key Accounts</li>
+              <li>Vertrags- und Honorarverhandlungen auf Kunden- und Kandidatenseite</li>
+              <li>Bedarfsanalyse und Beratung von Unternehmenskunden zu Personallösungen</li>
+              <li>Steuerung des gesamten Besetzungsprozesses von der Anfrage bis zum Match</li>
+              <li>Proaktive Identifikation, Ansprache und Auswahl von IT-Fachkräften</li>
               <li>Entwicklung von Recruiting- und Personalmarketingstrategien</li>
-              <li>Aufbau einer zentralen Auftrags- und Kandidatendatenbank</li>
-              <li>Active Sourcing, Interviews und Auswahl für IT-Positionen</li>
-              <li>Aufbau eines Netzwerks aus IT-Fachkräften und Entscheidungsträgern</li>
+              <li>Konzeption und Aufbau einer zentralen Auftrags- und Kandidatendatenbank</li>
+              <li>Kontinuierliche Pflege eines Pools aus IT-Spezialisten und Entscheidern</li>
             </ul>
             <ul class="proj-teaser" aria-label="Projekte in dieser Station">
-              <li><button type="button" onclick="openProj(this)">Aufbau einer zentralen Auftrags- und Kandidatendatenbank mit Dokumentenverwaltung</button></li>
-              <li><button type="button" onclick="openProj(this)">Erlangung der Arbeitnehmerüberlassung (AÜG)</button></li>
+              <li><button type="button" onclick="openProj(this)">Aufbau einer zentralen Auftrags- und Kandidatendatenbank mit Dokumentenverwaltung (Studienkooperation mit dem BIB College Paderborn)</button></li>
+              <li><button type="button" onclick="openProj(this)">Aufbau des Geschäftsfelds Arbeitnehmerüberlassung: AÜG-Erlaubnis bis zur unbefristeten Erlaubnis</button></li>
             </ul>
             <div class="proj-toggle" onclick="toggleProj(this)">Projekte ansehen <span>→</span></div>
             <div class="proj-list">
+
               <div class="proj-card">
-                <h4>Aufbau einer zentralen Auftrags- und Kandidatendatenbank mit Dokumentenverwaltung</h4>
+                <h4>Aufbau einer zentralen Auftrags- und Kandidatendatenbank mit Dokumentenverwaltung (Studienkooperation mit dem BIB College Paderborn)</h4>
                 <div class="proj-meta"><span class="pd">Feb. 2015 - Okt. 2015</span><span class="proj-org">Mit [SAN]ITT[ Information Technology Trainings verbunden</span></div>
-                <div class="proj-section"><div class="lbl">Ausgangslage</div><p>Bei [SAN]ITT[ gab es keine zentrale Übersicht über Freelancer, Mitarbeiter, Kunden und laufende Aufträge - alle Informationen lagen verteilt in einzelnen Dokumenten auf dem Server. Verfügbarkeiten, Vertragsstatus oder der letzte Gesprächsstand mussten aus verschiedenen Dateien zusammengesucht werden. Das kostete Zeit, führte zu Doppelarbeit und sorgte dafür, dass bei jedem Zuständigkeitswechsel Wissen verloren ging.</p></div>
-                <div class="proj-section"><div class="lbl">Meine Rolle</div><p>Ich habe das Projekt als Studienkooperation mit dem BIB College Paderborn (Fachbereich Informatik) initiiert und auf Unternehmensseite fachlich verantwortet. Dazu gehörte, die Anforderungen aus dem operativen Alltag zu erheben, sie mit den Studierenden in ein technisches Konzept zu übersetzen und die Umsetzung bis zur erfolgreichen Einführung zu begleiten.</p></div>
-                <div class="proj-section"><div class="lbl">Ergebnis</div><p>Entstanden ist eine zentrale Datenbank, die Freelancer, Mitarbeiter und Kunden miteinander verknüpft. Lebensläufe und Verträge sind direkt am jeweiligen Datensatz hinterlegt, Auftragsstatus, Verfügbarkeiten und Gesprächshistorie sind an einer Stelle einsehbar.</p></div>
-                <div class="proj-section"><div class="lbl">Konkreter Mehrwert</div><ul class="check-list">
-                  <li>Eine verlässliche, <b>zentrale Datenbasis</b> statt verteilter Dokumente</li>
-                  <li>Verfügbarkeit und Vertragsstatus jederzeit auf einen Blick, ohne Dateien durchsuchen zu müssen</li>
-                  <li>Reibungslose Übergaben bei Zuständigkeitswechseln, weil die gesamte Historie am Datensatz hängt</li>
+                <div class="proj-section"><div class="lbl">Ausgangslage</div><p>Bei [SAN]ITT[ lagen alle Informationen zu Freelancern, Mitarbeitenden, Kunden und laufenden Aufträgen verteilt in einzelnen Dokumenten auf dem Server. Verfügbarkeit, Vertragsstatus oder der letzte Gesprächsstand mussten aus mehreren Dateien zusammengesucht werden. Das kostete Zeit und führte zu Doppelarbeit. Bei jedem Zuständigkeitswechsel ging Wissen verloren.</p></div>
+                <div class="proj-section"><div class="lbl">Meine Rolle</div><ul class="arrow-list">
+                  <li>Das Projekt als Studienkooperation mit dem BIB College Paderborn (Fachbereich Informatik) initiiert</li>
+                  <li>Fachliche Verantwortung auf Unternehmensseite</li>
+                  <li>Anforderungen aus dem operativen Alltag erhoben und in ein technisches Konzept übersetzt</li>
+                  <li>Die Umsetzung bis zur Einführung begleitet</li>
+                </ul></div>
+                <div class="proj-section"><div class="lbl">Ergebnis</div><ul class="arrow-list">
+                  <li>Eine verlässliche Datenbasis statt verteilter Dokumente</li>
+                  <li>Verfügbarkeit und Vertragsstatus ohne Dateisuche abrufbar</li>
+                  <li>Übergaben ohne Wissensverlust, da die Historie am Datensatz hängt</li>
                 </ul></div>
               </div>
+
               <div class="proj-card">
-                <h4>Erlangung der Arbeitnehmerüberlassung (AÜG)</h4>
+                <h4>Aufbau des Geschäftsfelds Arbeitnehmerüberlassung: AÜG-Erlaubnis bis zur unbefristeten Erlaubnis</h4>
                 <div class="proj-meta"><span class="pd">Feb. 2016 - Juli 2016</span><span class="proj-org">Mit [SAN]ITT[ Information Technology Trainings verbunden</span></div>
-                <div class="proj-section"><div class="lbl">Ausgangslage</div><p>Als IT-Personaldienstleister haben wir IT-Freelancer an IT-Kundenprojekte vermittelt. Um IT-Fachkräfte künftig auch fest anstellen und an Kunden überlassen zu können, war eine Erlaubnis zur Arbeitnehmerüberlassung nach dem AÜG zwingend erforderlich.</p></div>
-                <div class="proj-section"><div class="lbl">Meine Rolle</div><p>In Abstimmung mit der Geschäftsführung habe ich den gesamten Antragsprozess koordiniert - von der Zusammenstellung aller erforderlichen Unterlagen und Nachweise bei Behörden, Berufsgenossenschaft und Krankenkassen über die Vorbereitung und Einreichung des Antrags bis zur laufenden Abstimmung mit der Bundesagentur für Arbeit. Parallel habe ich die Vertragsmuster für Arbeits- und Überlassungsverträge erstellt.</p></div>
-                <div class="proj-section"><div class="lbl">Ergebnis</div><p>Die Erlaubnis wurde erteilt, zunächst befristet auf ein Jahr. Damit haben wir die Arbeitnehmerüberlassung als zweites Geschäftsfeld neben der Freelancer-Vermittlung etabliert. In den folgenden drei Jahren habe ich die Einhaltung der gesetzlichen Vorgaben im laufenden Betrieb verantwortet.</p></div>
-                <div class="proj-section"><div class="lbl">Konkreter Mehrwert</div><ul class="check-list">
-                  <li>Neues Geschäftsfeld erschlossen - Arbeitnehmerüberlassung zusätzlich zur Freelancer-Vermittlung</li>
-                  <li>Vollständiger Antragsprozess eigenständig koordiniert und zum Erfolg geführt</li>
-                  <li><b>Drei Jahre</b> beanstandungsfreier Betrieb, der die Voraussetzung für die unbefristete Erlaubnis war</li>
-                  <li><b>Unbefristete AÜG-Erlaubnis</b> als Bestätigung, dass alle gesetzlichen Vorgaben durchgehend eingehalten wurden</li>
+                <div class="proj-section"><div class="lbl">Ausgangslage</div><p>[SAN]ITT[ vermittelte IT-Freelancer an Kundenprojekte. Um IT-Fachkräfte künftig auch fest anzustellen und an Kunden zu überlassen, brauchten wir eine Erlaubnis zur Arbeitnehmerüberlassung nach dem AÜG.</p></div>
+                <div class="proj-section"><div class="lbl">Meine Rolle</div><ul class="arrow-list">
+                  <li>Antragsprozess mit der Geschäftsführung koordiniert</li>
+                  <li>Nachweise von Behörden, BG und Krankenkassen beschafft</li>
+                  <li>Antrag eingereicht, mit der Bundesagentur abgestimmt</li>
+                  <li>Vertragsmuster für Arbeit und Überlassung erstellt</li>
+                  <li>Drei Jahre lang die Einhaltung der Vorgaben verantwortet</li>
+                </ul></div>
+                <div class="proj-section"><div class="lbl">Ergebnis</div><p>Erlaubnis erteilt, zunächst befristet auf ein Jahr. Nach drei beanstandungsfreien Jahren folgte die unbefristete.</p><ul class="arrow-list">
+                  <li>Zweites Geschäftsfeld neben der Freelancer-Vermittlung</li>
+                  <li>Antrag in fünf Monaten bis zur Erteilung geführt</li>
+                  <li>Drei Jahre ohne Beanstandung</li>
                 </ul></div>
               </div>
             </div>
           </div>
         </div>
+
 
       </div>
     </div>
