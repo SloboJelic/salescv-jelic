@@ -438,6 +438,7 @@
   .arrow-list li{color:var(--ink-soft);font-size:17px;line-height:1.6;margin-bottom:8px;padding-left:26px;position:relative;}
   .arrow-list li::before{content:"→";position:absolute;left:0;top:0;color:var(--accent);font-weight:700;}
   .proj-section p + .arrow-list{margin-top:4px;}
+  @media (min-width:981px){.job.job-current .job-title h3{padding-right:96px;}}
 
   /* ---------- IMPACT / NUMBERS ---------- */
 
@@ -801,26 +802,12 @@ h1,h2,h3,h4{overflow-wrap:break-word;hyphens:manual;}
               <li>Enge Zusammenarbeit und Abstimmung mit den verschiedenen Business Units</li>
             </ul>
             <ul class="proj-teaser" aria-label="Projekte in dieser Station">
-              <li><button type="button" onclick="openProj(this)">Entwicklung eines automatisierten Management-Cockpits zur Steuerung der Kursauslastung</button></li>
               <li><button type="button" onclick="openProj(this)">Einführung eines KI-Voice-Agents im Inbound-Vertrieb</button></li>
               <li><button type="button" onclick="openProj(this)">Automatisiertes Kapazitäts-Dashboard mit Alarmfunktion</button></li>
               <li><button type="button" onclick="openProj(this)">Fünfstufige Follow-up-Strecke im CRM: Lead-Management im Bildungsvertrieb</button></li>
             </ul>
             <div class="proj-toggle" onclick="toggleProj(this)">Projekte ansehen <span>→</span></div>
             <div class="proj-list">
-
-              <div class="proj-card">
-                <h4>Entwicklung eines automatisierten Management-Cockpits zur Steuerung der Kursauslastung</h4>
-                <div class="proj-meta"><span class="pd">Juni 2026 - heute</span><span class="proj-status">In Umsetzung</span><span class="proj-org">Mit GFN verbunden</span></div>
-                <div class="proj-section"><div class="lbl">Ausgangslage</div><p>Die Kursauslastung kam bei uns immer nur als Rohdaten aus dem CRM - exportiert nach Excel, jedes Mal aufs Neue. Eine verdichtete Sicht, aus der man direkt ablesen kann, welcher Kurs gefährdet ist oder wo gehandelt werden muss, gab es nicht. Das Ergebnis: Risiken wie Unterauslastung oder drohende Absagen fielen oft erst spät auf, wenn Entscheidungen eigentlich schon früher hätten getroffen werden müssen.</p></div>
-                <div class="proj-section"><div class="lbl">Umsetzung</div><p>Ich entwickle die fachliche Konzeption für ein automatisiertes Management-Dashboard, das aus den CRM-Daten mehr macht als nur eine Tabelle. Der Kern ist eine ganze Reihe an Business-Logiken, die ich selbst definiert habe - unter anderem eine Ampellogik zur Bewertung der Startfähigkeit von Kursen, eine Berechnung von Auslastung, Pipeline-Puffer und freien Kapazitäten sowie eine Prognoselogik mit Run-Rate, die vorhersagt, wie sich die Teilnehmerzahlen bis zum Kursstart wahrscheinlich entwickeln. Dazu kommen Sonderfall-Logiken (z. B. für abgesagte Kurse), eine Verlaufsanalyse über mehrere Stichtage und eine automatische Kennzeichnung möglicher Zweitkurse bei hoher Nachfrage.</p></div>
-                <div class="proj-section"><div class="lbl">Erwartetes Ergebnis</div><ul class="check-list">
-                  <li>Deutlich höhere Transparenz über die Auslastung aller Kursangebote</li>
-                  <li>Gefährdete Kurse sollen künftig durch Prognose erkannt werden, nicht erst durch eine Momentaufnahme</li>
-                  <li>Eine einheitliche Entscheidungsgrundlage fürs Management statt individueller Excel-Interpretationen</li>
-                  <li>Weniger manuelle Analysen dank automatisierter Kennzahlen und Business-Regeln</li>
-                </ul></div>
-              </div>
 
               <div class="proj-card">
                 <h4>Einführung eines KI-Voice-Agents im Inbound-Vertrieb</h4>
@@ -1355,7 +1342,8 @@ var emps = [
   {text: "Ich habe die Zusammenarbeit mit Slobodan als ausgesprochen positiv, kollegial und vor allem effizient erlebt. Was mir dabei besonders in Erinnerung geblieben ist: Auf Slobodan war einfach Verlass.\n\nDie Kommunikation war jederzeit offen, direkt und unkompliziert. Er ist sehr kommunikativ, verbindlich und schafft es dadurch, auch in anspruchsvolleren Situationen schnell Klarheit zu schaffen und gemeinsam Lösungen zu finden.\n\nBesonders geschätzt habe ich, dass Slobodan nie nur „seinen Aufgabenbereich“ gesehen hat. Auch über seine eigentliche Position und Zuständigkeit hinaus war er immer bereit zu unterstützen, mitzudenken und weiterzuhelfen. Genau diese Haltung macht für mich einen echten Teamplayer aus.\n\nDie Zusammenarbeit war nicht nur erfolgreich und effizient, sondern hat vor allem auch menschlich Spaß gemacht. Slobodan ist jemand, den man sehr gerne im Team hat – fachlich wie menschlich. Und genau deshalb kann ich die Zusammenarbeit mit ihm aus voller Überzeugung empfehlen.", name: "S.B.", role: "Mitarbeiterin · GFN GmbH"},
   {text: "Ich schätze Slobodan als kompetenten Kollegen. Mit über 12 Jahren Erfahrung im Vertrieb im geförderten Bildungsmarkt und seiner Tätigkeit als Leitung der Zentralen Erstberatung verbindet er fundiertes Fachwissen mit einem klaren Blick für die Bedürfnisse von Interessenten, Mitarbeitenden und Unternehmen.\n\nSeine Expertise umfasst die Förderbereiche FbW, AVGS und QCG ebenso wie Vertriebsführung, Prozessoptimierung und Beratungsqualität.", name: "N.S.", role: "Mitarbeiterin · GFN GmbH"},
   {text: "Meine Zusammenarbeit mit Slobo war einfach und zielgerichtet. Seine benötigten Verbesserungen wurden immer klar dargestellt und beschrieben, sodass es einfach war, die technische Umsetzung durchführen zu lassen und von ihm abzunehmen. Die zeitlichen Ersparnisse waren durch ihn auch klar dargestellt, sodass Breakeven und ROI berechnet werden konnten.\n\nAuch wenn etwas nicht gleich funktionierte, haben wir entspannt eine Lösung gefunden. Slobo kann ich nur empfehlen.", name: "L.S.", role: "Ehemaliger Mitarbeiter · GFN GmbH"},
-  {text: "Die Zusammenarbeit mit Slobodan war für mich von Anfang an von gegenseitigem Vertrauen, einem sehr angenehmen Miteinander und einer unkomplizierten Arbeitsweise geprägt. Er bringt eine positive, offene Art mit und schafft es, auch bei unterschiedlichen Perspektiven oder herausfordernden Themen den Austausch konstruktiv und lösungsorientiert zu halten.\n\nBesonders positiv ist mir seine Bereitschaft aufgefallen, dort zu unterstützen, wo es gerade gebraucht wird. Seine Verlässlichkeit und sein Engagement haben die Zusammenarbeit für mich besonders angenehm gemacht.\n\nAuch menschlich habe ich die gemeinsame Zeit sehr geschätzt. Slobodan ist ein Kollege, mit dem die Zusammenarbeit nicht nur professionell, sondern auch persönlich sehr bereichernd ist. Ich würde jederzeit wieder sehr gerne mit ihm zusammenarbeiten und kann ihn sowohl fachlich als auch menschlich mit voller Überzeugung empfehlen.", name: "M.R.", role: "Mitarbeiterin · GFN GmbH"}
+  {text: "Die Zusammenarbeit mit Slobodan war für mich von Anfang an von gegenseitigem Vertrauen, einem sehr angenehmen Miteinander und einer unkomplizierten Arbeitsweise geprägt. Er bringt eine positive, offene Art mit und schafft es, auch bei unterschiedlichen Perspektiven oder herausfordernden Themen den Austausch konstruktiv und lösungsorientiert zu halten.\n\nBesonders positiv ist mir seine Bereitschaft aufgefallen, dort zu unterstützen, wo es gerade gebraucht wird. Seine Verlässlichkeit und sein Engagement haben die Zusammenarbeit für mich besonders angenehm gemacht.\n\nAuch menschlich habe ich die gemeinsame Zeit sehr geschätzt. Slobodan ist ein Kollege, mit dem die Zusammenarbeit nicht nur professionell, sondern auch persönlich sehr bereichernd ist. Ich würde jederzeit wieder sehr gerne mit ihm zusammenarbeiten und kann ihn sowohl fachlich als auch menschlich mit voller Überzeugung empfehlen.", name: "M.R.", role: "Mitarbeiterin · GFN GmbH"},
+  {text: "Slobodan ist der Beweis, dass Prozessarbeit und gute Laune sich nicht ausschließen. Bei ihm heißt Zusammenarbeit: klare Absprachen, schnelle Umsetzung und null Reibungsverluste an den Schnittstellen.\n\nWenn im Ablauf etwas hakt, sagt er es offen und sucht direkt die Lösung. Dazu kommt eine Portion Humor, die jeden Abstimmungstermin besser macht. Für mich als Qualitätsmensch genau der richtige Kollege: unkompliziert, verbindlich und mit Blick fürs große Ganze.", name: "N.F.", role: "Mitarbeiterin · GFN GmbH"}
 ];
 var ei = 0, etimer;
 function empRender() {
